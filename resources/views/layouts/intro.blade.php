@@ -236,7 +236,7 @@
                     @endif
 
                     <a href="{{ url('/') }}" class="navbar-brand">
-                        Daerah Irigasi
+                         <img src="{{ asset('') }}assets/img/logo.png"  alt="" style="height: 50px;  ">
                     </a>
 
 
