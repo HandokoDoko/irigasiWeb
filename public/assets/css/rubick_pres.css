@@ -412,7 +412,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .navbar-default {
-  background-color: white;
+  background-color: #78DEED;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .navbar-default .navbar-nav > li > a:not(.btn) {

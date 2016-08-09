@@ -236,7 +236,7 @@
                     @endif
 
                     <a href="{{ url('/') }}" class="navbar-brand">
-                         <img src="{{ asset('') }}assets/img/logo.png"  alt="" style="height: 50px;  ">
+                         Daerah Irigasi
                     </a>
 
 
@@ -248,7 +248,7 @@
                             <!-- start: USER DROPDOWN -->
                             <li class="dropdown current-user">
                                 <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-                                    <img src="{{ asset('') }}assets/img/profile/anonymous.jpg" class="img-circle" alt="" style="height: 40px; width:40px; "> <span class="username hidden-xs">{{ Auth::user()->name }} </span> <i class="fa fa-caret-down "></i>
+                                    <img src="{{ asset('') }}assets/img/profile/anonymous.jpg" class="img-circle" alt="" style="height: 40px; width:40px; "> <span class="username hidden-xs">{{ ucfirst(Auth::user()->name) }} </span> <i class="fa fa-caret-down "></i>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
