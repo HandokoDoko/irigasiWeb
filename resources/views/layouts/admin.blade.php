@@ -21,35 +21,35 @@
 		<!-- end: META -->
 		<!-- start: MAIN CSS -->
 		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,200,100,800' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="assets-admin/plugins/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="assets-admin/plugins/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="assets-admin/plugins/iCheck/skins/all.css">
-		<link rel="stylesheet" href="assets-admin/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
-		<link rel="stylesheet" href="assets-admin/plugins/animate.css/animate.min.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/iCheck/skins/all.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/perfect-scrollbar/src/perfect-scrollbar.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/animate.css/animate.min.css">
 		<!-- end: MAIN CSS -->
 		<!-- start: CSS REQUIRED FOR SUBVIEW CONTENTS -->
-		<link rel="stylesheet" href="assets-admin/plugins/owl-carousel/owl-carousel/owl.carousel.css">
-		<link rel="stylesheet" href="assets-admin/plugins/owl-carousel/owl-carousel/owl.theme.css">
-		<link rel="stylesheet" href="assets-admin/plugins/owl-carousel/owl-carousel/owl.transitions.css">
-		<link rel="stylesheet" href="assets-admin/plugins/summernote/dist/summernote.css">
-		<link rel="stylesheet" href="assets-admin/plugins/fullcalendar/fullcalendar/fullcalendar.css">
-		<link rel="stylesheet" href="assets-admin/plugins/toastr/toastr.min.css">
-		<link rel="stylesheet" href="assets-admin/plugins/bootstrap-select/bootstrap-select.min.css">
-		<link rel="stylesheet" href="assets-admin/plugins/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css">
-		<link rel="stylesheet" href="assets-admin/plugins/DataTables/media/css/DT_bootstrap.css">
-		<link rel="stylesheet" href="assets-admin/plugins/bootstrap-fileupload/bootstrap-fileupload.min.css">
-		<link rel="stylesheet" href="assets-admin/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/owl-carousel/owl-carousel/owl.carousel.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/owl-carousel/owl-carousel/owl.theme.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/owl-carousel/owl-carousel/owl.transitions.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/summernote/dist/summernote.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/fullcalendar/fullcalendar/fullcalendar.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/toastr/toastr.min.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/bootstrap-select/bootstrap-select.min.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/DataTables/media/css/DT_bootstrap.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/bootstrap-fileupload/bootstrap-fileupload.min.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css">
 		<!-- end: CSS REQUIRED FOR THIS SUBVIEW CONTENTS-->
 		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-		<link rel="stylesheet" href="assets-admin/plugins/weather-icons/css/weather-icons.min.css">
-		<link rel="stylesheet" href="assets-admin/plugins/nvd3/nv.d3.min.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/weather-icons/css/weather-icons.min.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/nvd3/nv.d3.min.css">
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- start: CORE CSS -->
-		<link rel="stylesheet" href="assets-admin/css/styles.css">
-		<link rel="stylesheet" href="assets-admin/css/styles-responsive.css">
-		<link rel="stylesheet" href="assets-admin/css/plugins.css">
-		<link rel="stylesheet" href="assets-admin/css/themes/theme-default.css" type="text/css" id="skin_color">
-		<link rel="stylesheet" href="assets-admin/css/print.css" type="text/css" media="print"/>
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/css/styles.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/css/styles-responsive.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/css/plugins.css">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/css/themes/theme-default.css" type="text/css" id="skin_color">
+		<link rel="stylesheet" href="{{ asset('') }}assets-admin/css/print.css" type="text/css" media="print"/>
 		<!-- end: CORE CSS -->
 		<link rel="shortcut icon" href="favicon.ico" />
 	</head>
@@ -97,34 +97,34 @@
 						<div class="blog-photo-stream margin-bottom-30">
 							<ul class="list-unstyled">
 								<li>
-									<a href="#"><img alt="" src="assets-admin/images/image01_th.jpg"></a>
+									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image01_th.jpg"></a>
 								</li>
 								<li>
-									<a href="#"><img alt="" src="assets-admin/images/image02_th.jpg"></a>
+									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image02_th.jpg"></a>
 								</li>
 								<li>
-									<a href="#"><img alt="" src="assets-admin/images/image03_th.jpg"></a>
+									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image03_th.jpg"></a>
 								</li>
 								<li>
-									<a href="#"><img alt="" src="assets-admin/images/image04_th.jpg"></a>
+									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image04_th.jpg"></a>
 								</li>
 								<li>
-									<a href="#"><img alt="" src="assets-admin/images/image05_th.jpg"></a>
+									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image05_th.jpg"></a>
 								</li>
 								<li>
-									<a href="#"><img alt="" src="assets-admin/images/image06_th.jpg"></a>
+									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image06_th.jpg"></a>
 								</li>
 								<li>
-									<a href="#"><img alt="" src="assets-admin/images/image07_th.jpg"></a>
+									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image07_th.jpg"></a>
 								</li>
 								<li>
-									<a href="#"><img alt="" src="assets-admin/images/image08_th.jpg"></a>
+									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image08_th.jpg"></a>
 								</li>
 								<li>
-									<a href="#"><img alt="" src="assets-admin/images/image09_th.jpg"></a>
+									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image09_th.jpg"></a>
 								</li>
 								<li>
-									<a href="#"><img alt="" src="assets-admin/images/image10_th.jpg"></a>
+									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image10_th.jpg"></a>
 								</li>
 							</ul>
 						</div>
@@ -182,7 +182,7 @@
 							<!-- start: USER DROPDOWN -->
 							<li class="dropdown current-user">
 								<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-									<img src="assets-admin/images/avatar-1-small.jpg" class="img-circle" alt=""> <span class="username hidden-xs">{{ ucfirst(Auth::user()->name) }}</span> <i class="fa fa-caret-down "></i>
+									<img src="{{ asset('') }}assets-admin/images/avatar-1-small.jpg" class="img-circle" alt=""> <span class="username hidden-xs">{{ ucfirst(Auth::user()->name) }}</span> <i class="fa fa-caret-down "></i>
 								</a>
 								<ul class="dropdown-menu dropdown-dark">
 									<li>
@@ -234,7 +234,7 @@
 						</div>
 						<div class="user-profile border-top padding-horizontal-10 block">
 							<div class="inline-block">
-								<img src="assets-admin/images/avatar-1.jpg" alt="">
+								<img src="{{ asset('') }}assets-admin/images/avatar-1.jpg" alt="">
 							</div>
 							<div class="inline-block">
 								<h5 class="no-margin"> Administrator </h5>
@@ -247,7 +247,7 @@
 						<!-- start: MAIN NAVIGATION MENU -->
 						<ul class="main-navigation-menu">
 							<li class="active open">
-								<a href="index-2.html"><i class="fa fa-home"></i> <span class="title"> Dashboard </span><span class="label label-default pull-right ">LABEL</span> </a>
+								<a href="{{ url('/admin') }}"><i class="fa fa-home"></i> <span class="title"> Dashboard </span><span class="label label-default pull-right ">LABEL</span> </a>
 							</li>
 							<li>
 								<a href="javascript:void(0)"><i class="fa fa-desktop"></i> <span class="title"> Layouts </span><i class="icon-arrow"></i> </a>
@@ -361,61 +361,61 @@
 		</div>
 		<!-- start: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
-		<script src="assets-admin/plugins/respond.min.js"></script>
-		<script src="assets-admin/plugins/excanvas.min.js"></script>
-		<script type="text/javascript" src="assets-admin/plugins/jQuery/jquery-1.11.1.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/respond.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/excanvas.min.js"></script>
+		<script type="text/javascript" src="{{ asset('') }}assets-admin/plugins/jQuery/jquery-1.11.1.min.js"></script>
 		<![endif]-->
 		<!--[if gte IE 9]><!-->
-		<script src="assets-admin/plugins/jQuery/jquery-2.1.1.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/jQuery/jquery-2.1.1.min.js"></script>
 		<!--<![endif]-->
-		<script src="assets-admin/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-		<script src="assets-admin/plugins/bootstrap/js/bootstrap.min.js"></script>
-		<script src="assets-admin/plugins/blockUI/jquery.blockUI.js"></script>
-		<script src="assets-admin/plugins/iCheck/jquery.icheck.min.js"></script>
-		<script src="assets-admin/plugins/moment/min/moment.min.js"></script>
-		<script src="assets-admin/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-		<script src="assets-admin/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-		<script src="assets-admin/plugins/bootbox/bootbox.min.js"></script>
-		<script src="assets-admin/plugins/jquery.scrollTo/jquery.scrollTo.min.js"></script>
-		<script src="assets-admin/plugins/ScrollToFixed/jquery-scrolltofixed-min.js"></script>
-		<script src="assets-admin/plugins/jquery.appear/jquery.appear.js"></script>
-		<script src="assets-admin/plugins/jquery-cookie/jquery.cookie.js"></script>
-		<script src="assets-admin/plugins/velocity/jquery.velocity.min.js"></script>
-		<script src="assets-admin/plugins/TouchSwipe/jquery.touchSwipe.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/blockUI/jquery.blockUI.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/iCheck/jquery.icheck.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/moment/min/moment.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/bootbox/bootbox.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/jquery.scrollTo/jquery.scrollTo.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/ScrollToFixed/jquery-scrolltofixed-min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/jquery.appear/jquery.appear.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/velocity/jquery.velocity.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/TouchSwipe/jquery.touchSwipe.min.js"></script>
 		<!-- end: MAIN JAVASCRIPTS -->
 		<!-- start: JAVASCRIPTS REQUIRED FOR SUBVIEW CONTENTS -->
-		<script src="assets-admin/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
-		<script src="assets-admin/plugins/jquery-mockjax/jquery.mockjax.js"></script>
-		<script src="assets-admin/plugins/toastr/toastr.js"></script>
-		<script src="assets-admin/plugins/bootstrap-modal/js/bootstrap-modal.js"></script>
-		<script src="assets-admin/plugins/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
-		<script src="assets-admin/plugins/fullcalendar/fullcalendar/fullcalendar.min.js"></script>
-		<script src="assets-admin/plugins/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
-		<script src="assets-admin/plugins/bootstrap-select/bootstrap-select.min.js"></script>
-		<script src="assets-admin/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
-		<script src="assets-admin/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
-		<script src="assets-admin/plugins/DataTables/media/js/jquery.dataTables.min.js"></script>
-		<script src="assets-admin/plugins/DataTables/media/js/DT_bootstrap.js"></script>
-		<script src="assets-admin/plugins/truncate/jquery.truncate.js"></script>
-		<script src="assets-admin/plugins/summernote/dist/summernote.min.js"></script>
-		<script src="assets-admin/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
-		<script src="assets-admin/js/subview.js"></script>
-		<script src="assets-admin/js/subview-examples.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/jquery-mockjax/jquery.mockjax.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/toastr/toastr.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/bootstrap-modal/js/bootstrap-modal.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/fullcalendar/fullcalendar/fullcalendar.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/DataTables/media/js/jquery.dataTables.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/DataTables/media/js/DT_bootstrap.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/truncate/jquery.truncate.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/summernote/dist/summernote.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+		<script src="{{ asset('') }}assets-admin/js/subview.js"></script>
+		<script src="{{ asset('') }}assets-admin/js/subview-examples.js"></script>
 		<!-- end: JAVASCRIPTS REQUIRED FOR SUBVIEW CONTENTS -->
 		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script src="assets-admin/plugins/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-		<script src="assets-admin/plugins/nvd3/lib/d3.v3.js"></script>
-		<script src="assets-admin/plugins/nvd3/nv.d3.min.js"></script>
-		<script src="assets-admin/plugins/nvd3/src/models/historicalBar.js"></script>
-		<script src="assets-admin/plugins/nvd3/src/models/historicalBarChart.js"></script>
-		<script src="assets-admin/plugins/nvd3/src/models/stackedArea.js"></script>
-		<script src="assets-admin/plugins/nvd3/src/models/stackedAreaChart.js"></script>
-		<script src="assets-admin/plugins/jquery.sparkline/jquery.sparkline.js"></script>
-		<script src="assets-admin/plugins/easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
-		<script src="assets-admin/js/index.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/nvd3/lib/d3.v3.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/nvd3/nv.d3.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/nvd3/src/models/historicalBar.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/nvd3/src/models/historicalBarChart.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/nvd3/src/models/stackedArea.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/nvd3/src/models/stackedAreaChart.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/jquery.sparkline/jquery.sparkline.js"></script>
+		<script src="{{ asset('') }}assets-admin/plugins/easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+		<script src="{{ asset('') }}assets-admin/js/index.js"></script>
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- start: CORE JAVASCRIPTS  -->
-		<script src="assets-admin/js/main.js"></script>
+		<script src="{{ asset('') }}assets-admin/js/main.js"></script>
 		<!-- end: CORE JAVASCRIPTS  -->
 		<script>
 			jQuery(document).ready(function() {
