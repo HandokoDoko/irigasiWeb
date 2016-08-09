@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Certivy</title>
+        <title>Di Serdang Bedagai</title>
 
         <link href="{{ asset('') }}assets/css/bootstrap.css" rel="stylesheet" />
         <link href="{{ asset('') }}assets/css/rubick_pres.css" rel="stylesheet"/>
@@ -236,19 +236,19 @@
                     @endif
 
                     <a href="{{ url('/') }}" class="navbar-brand">
-                        Certivy
+                        di Serdang Bedagai
                     </a>
 
 
                     <!-- Authentication Links -->
                     @if (!Auth::guest())
-                    <div class="topbar-tools pull-right">
+                     <div class="topbar-tools pull-right">
                         <!-- start: TOP NAVIGATION MENU -->
                         <ul class="nav navbar-right">
                             <!-- start: USER DROPDOWN -->
                             <li class="dropdown current-user">
                                 <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-                                    <img src="{{ asset('') }}images/anonymous.jpg" class="img-circle" alt="" style="height: 45px;"> <span class="username hidden-xs">Peter Clark</span> <i class="fa fa-caret-down "></i>
+                                    <img src="{{ asset('') }}assets/img/profile/anonymous.jpg" class="img-circle" alt="" style="height: 40px; width:40px; "> <span class="username hidden-xs">{{ ucfirst(Auth::user()->name) }} </span> <i class="fa fa-caret-down "></i>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
@@ -261,7 +261,6 @@
                                             Manage Account
                                         </a>
                                     </li>
-                                    <li class="divider"></li>
                                     <li>
                                         <a href="{{ url('/logout') }}">
                                             Log Out
