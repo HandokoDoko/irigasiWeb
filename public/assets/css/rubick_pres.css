@@ -412,7 +412,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .navbar-default {
-  background-color: #78DEED;
+  background-image: url("assets/img/bg.jpg");
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .navbar-default .navbar-nav > li > a:not(.btn) {
@@ -459,7 +459,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .navbar-transparent .navbar-brand, [class*="navbar-ct"] .navbar-brand {
-  color: #FFFFFF;
+  color: transparent;
   opacity: 1;
   filter: alpha(opacity=100);
 }

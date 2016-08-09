@@ -69,8 +69,7 @@
             .pattern-image:after{
                 opacity: .2;
 /*                 background: #111; */
-            }
-            .section-header h1{
+            }.section-header h1{
                 text-shadow: -2px 2px 30px rgba(0, 0, 0, 0.25), -2px 4px 14px rgba(0, 0, 0, 0.1);
             }
             .section-header h5{
