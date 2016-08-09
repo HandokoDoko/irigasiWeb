@@ -36,7 +36,7 @@
         <div class="container">
             <div class="row">
                 <div class="title add-animation">
-                    <h2>What we do</h2>
+                    <h2>Tentang Kami</h2>
                     <div class="separator-container">
                         <div class="separator line-separator">∎</div>
                     </div>
@@ -48,8 +48,8 @@
                         <div class="icon">
                             <i class="pe-7s-tools"></i>
                         </div>
-                        <h3>Create UI Tools</h3>
-                        <p>We have created the tools that will help you in your next design project. From plugins to complex kits, we've got you covered in all areas regarding front-end development. </p>
+                        <h3>Visi Kementerian Pertanian</h3>
+                        <p>Terwujudnya Indonesia yang Berdaulat, Mandiri dan Berkepribadian Berlandaskan Gotong Royong. </p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -57,8 +57,12 @@
                         <div class="icon">
                             <i class="pe-7s-gift"></i>
                         </div>
-                        <h3>Share cer-template</h3>
-                        <p>Everything that we used to create our platform can be downloaded for free and guess what, people love free stuff. People have already trusted and used them in thousands of sites.</p>
+                        <h3>Misi Kementerian Pertanian </h3>
+                        <p> 1.Mewujudkan ketahanan pangan dan gizi<br>
+                            2. Meningkatkan Nilai Tambah dan Daya Saing Komoditas Pertanian<br>
+                            3. Mewujudkan kesejahteraan petani<br>
+                            4.Mewujudkan Kementerian Pertanian yang transparan, akuntabel, profesional dan berintegritas tinggi <br>
+                        </p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -79,12 +83,12 @@
             <div class="container">
                 <div class="row">
                     <div class="title" id="animationTest">
-                        <h2>About certivy Tim</h2>
+                        <h2>apa itu Irigasi?</h2>
                         <div class="separator-container">
                             <div class="separator line-separator">∎</div>
                         </div>
                         <p class="large">
-                            certivy Tim is a startup that creates design tools that make the web development process faster and easier. We love the web and care deeply for how users interact with a digital product. We power businesses and individuals to create better looking web projects around the world.
+                             Irigasi adalah suatu sistem untuk mengairi suatu lahan dengan cara membendung sumber air. Atau dalam pengertian lain irigasi adalah usaha penyediaan, pengaturan, dan pembuangan air irigasi untuk menunjang pertanian yang jenisnya meliputi irigasi permukaan, irigasi rawa, irigasi air bawah tanah, irigasi pompa, dan irigasi tambak.
                         </p>
                     </div>
                 </div>
@@ -96,29 +100,29 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card add-animation animation-2">
-                                <img alt="..." src="assets/img/pic10.jpg" />
+                                <img alt="..." src="assets/img/1.jpg" />
                             </div>
                             <div class="card add-animation animation-4">
-                                <img alt="..." src="assets/img/pic6.jpg" />
+                                <img alt="..." src="assets/img/2.jpg" />
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="card add-animation animation-1">
-                                <img alt="..." src="assets/img/pic11.jpg"/>
+                                <img alt="..." src="assets/img/3.jpg"/>
                             </div>
                             <div class="card add-animation animation-3">
-                                <img alt="..." src="assets/img/pic1.jpg"/>
+                                <img alt="..." src="assets/img/4.jpg"/>
                             </div>
                             <div class="card add-animation animation-2">
-                                <img alt="..." src="assets/img/pic9.jpg"/>
+                                <img alt="..." src="assets/img/5.jpg"/>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="card add-animation animation-3">
-                                <img alt="..." src="assets/img/pic2.jpg"/>
+                                <img alt="..." src="assets/img/6.jpg"/>
                             </div>
                              <div class="card add-animation animation-1">
-                                <img alt="..." src="assets/img/pic4.jpg"/>
+                                <img alt="..." src="assets/img/7.jpg"/>
                             </div>
                         </div>
                     </div>
