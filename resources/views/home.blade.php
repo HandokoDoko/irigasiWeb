@@ -92,7 +92,30 @@
                                             <strong>Hai {{ ucfirst(Auth::user()->name) }}!</strong>
                                             Selamat Datang di <a class="alert-link" href="#">
                                                 Halaman Admin</a>
-                                        </div>
+                                </div>
+<!--                                 <div>
+                                  <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th>No</th>
+                                        <th>Kabupaten</th>
+                                        <th>Alamat</th>
+                                        <td>Aksi</td>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>1.</td>
+                                        <td>Delitua</td>
+                                        <td>Jl. Mataram</td>
+                                        <td>
+                                          <span class="glyphicon glyphicon-tag"></span>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  
+                                </div>-->
 
                                <!--<div class="row">
                                     <div class="col-sm-12">

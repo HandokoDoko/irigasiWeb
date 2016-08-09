@@ -278,11 +278,6 @@
                     <div class="collapse navbar-collapse" style="min-height: 63px ! important;">
                         <ul class="nav navbar-nav navbar-right navbar-uppercase">
                             <li>
-                                <a href="{{ url('/register') }}" data-scroll="true">
-                                Sign Up
-                                </a>
-                            </li>
-                            <li>
                                 <a href="{{ url('/login') }}" data-scroll="true">
                                 Login
                                 </a>
