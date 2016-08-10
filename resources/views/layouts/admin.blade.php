@@ -9,7 +9,7 @@
 	
 <!-- Mirrored from www.cliptheme.com/demo/rapido/ by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 13 Jan 2015 04:24:48 GMT -->
 <head>
-		<title>diSerdang Bedagai</title>
+		<title>diSerdang Bedagai System</title>
 		<!-- start: META -->
 		<meta charset="utf-8" />
 		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
