@@ -68,9 +68,9 @@
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-md-12 space20">
-							<button class="btn btn-green add-row">
-								Add New <i class="fa fa-plus"></i>
-							</button>
+							<a href="{{ url('tambah_data') }}" class="btn btn-green">
+								Tambah Data <i class="fa fa-plus"></i>
+							</a>
 						</div>
 					</div>
 					<table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
