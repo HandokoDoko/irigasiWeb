@@ -122,15 +122,23 @@
                         </div>
                         <fieldset>
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Full Name" value="{{ old('name') }}">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Full Name" value="{{ old('name') }}" required="">
                                 @if ($errors->has('name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
                             </div>
+                            <div class="form-group{{ $errors->has('nip') ? ' has-error' : '' }}">
+                                <input type="text" class="form-control" name="nip" id="nip" placeholder="NIP" value="{{ old('nip') }}" required="">
+                                @if ($errors->has('nip'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('nip') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="E-Mail" value="{{ old('email') }}">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="E-Mail" value="{{ old('email') }}" required="">
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -138,7 +146,7 @@
                                 @endif
                             </div>
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+                                <input id="password" type="password" class="form-control" name="password" placeholder="Password" required="">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -148,7 +156,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" required="">
 
                                 @if ($errors->has('password_confirmation'))
                                     <span class="help-block">

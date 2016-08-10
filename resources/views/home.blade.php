@@ -53,15 +53,18 @@
                                                     <div class="user-left">
                                                         <div class="panel-body">
                                                             <div class="center">
-                                                                <h4>{{ Auth::user()->orgName }}</h4>
+                                                                <h4>{{ Auth::user()->name }}</h4>
                                                                 <div class="fileupload fileupload-new" data-provides="fileupload">
                                                                     <div class="user-image">
-                                                                        <div class="fileupload-new thumbnail"><img src="{{ asset('') }}assets/img/avatar-1-xl.jpg" alt=""></div>
+                                                                        @if(Auth::user()->pic==null)
+                                                                        <div class="fileupload-new thumbnail"><img src="{{ asset('') }}assets/img/profile/anonymous.jpg" alt=""></div>
+                                                                        @endif
+                                                                        @if(Auth::user()->pic!=null)
+                                                                        <div class="fileupload-new thumbnail"><img src="{{ asset('') }}assets/img/profile/{{ Auth::user()->pic }}.jpg" alt=""></div>
+                                                                        @endif
                                                                         <div class="fileupload-preview fileupload-exists thumbnail"></div>
                                                                         <div class="user-image-buttons">
-                                                                            <span class="btn btn-azure btn-file btn-sm"><span class="fileupload-new"><i class="fa fa-pencil"></i></span><span class="fileupload-exists"><i class="fa fa-pencil"></i></span>
-                                                                                <input type="file">
-                                                                            </span>
+                                                                            
                                                                             <a href="#" class="btn fileupload-exists btn-red btn-sm" data-dismiss="fileupload">
                                                                                 <i class="fa fa-times"></i>
                                                                             </a>
@@ -78,15 +81,9 @@
                                                                 <thead>
                                                                     <tr>
                                                                         <th colspan="2">Detail Info </th>
-                                                                        <td><a href="#panel_edit_account_personal" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
-                                                                    </tr>
+                                                                        </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    <tr>
-                                                                        <td>Name</td>
-                                                                        <td>{{ ucfirst(Auth::user()->name) }}</td>
-                                                                        <td></td>
-                                                                    </tr>
                                                                     <tr>
                                                                         <td>Username</td>
                                                                         <td>{{ ucfirst(Auth::user()->username) }}</td>
@@ -114,7 +111,6 @@
                                                                 <thead>
                                                                     <tr>
                                                                         <th colspan="2">Informasi Tambahan</th>
-                                                                        <td><a href="#panel_edit_account_Additional" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
@@ -195,7 +191,13 @@
                                                                 Image Upload
                                                             </label>
                                                             <div class="fileupload fileupload-new" data-provides="fileupload">
-                                                                <div class="fileupload-new thumbnail"><img src="{{ asset('') }}assets/img/{{ Auth::user()->photo }}.jpg" alt="">
+                                                                <div class="fileupload-new thumbnail">
+                                                                @if(Auth::user()->pic==null)
+                                                                    <img src="{{ asset('') }}assets/img/profile/anonymous.jpg" alt="">
+                                                                @endif
+                                                                @if(Auth::user()->pic!=null)
+                                                                    <img src="{{ asset('') }}assets/img/profile/{{ Auth::user()->pic }}.jpg" alt="">
+                                                                @endif
                                                                 </div>
                                                                 <div class="fileupload-preview fileupload-exists thumbnail"></div>
                                                                 <div class="user-edit-image-buttons">
