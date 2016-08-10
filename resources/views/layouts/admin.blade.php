@@ -44,6 +44,7 @@
 		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/weather-icons/css/weather-icons.min.css">
 		<link rel="stylesheet" href="{{ asset('') }}assets-admin/plugins/nvd3/nv.d3.min.css">
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+        @yield('css')
 		<!-- start: CORE CSS -->
 		<link rel="stylesheet" href="{{ asset('') }}assets-admin/css/styles.css">
 		<link rel="stylesheet" href="{{ asset('') }}assets-admin/css/styles-responsive.css">
@@ -247,56 +248,24 @@
 						<!-- start: MAIN NAVIGATION MENU -->
 						<ul class="main-navigation-menu">
 							<li class="active open">
-								<a href="{{ url('/admin') }}"><i class="fa fa-home"></i> <span class="title"> Dashboard </span><span class="label label-default pull-right ">LABEL</span> </a>
+								<a href="{{ url('/admin') }}"><i class="fa fa-home"></i> <span class="title"> Dashboard </span> </a>
 							</li>
 							<li>
-								<a href="javascript:void(0)"><i class="fa fa-desktop"></i> <span class="title"> Layouts </span><i class="icon-arrow"></i> </a>
+								<a href="javascript:void(0)"><i class="fa fa-desktop"></i> <span class="title"> Data Irigasi </span><i class="icon-arrow"></i> </a>
 								<ul class="sub-menu">
 									<li>
-										<a href="javascript:;">
-											Horizontal Menu <i class="icon-arrow"></i>
-										</a>
-										<ul class="sub-menu">
-											<li>
-												<a href="layouts_horizontal_menu.html">
-													Horizontal Menu
-												</a>
-											</li>
-											<li>
-												<a href="layouts_horizontal_menu_fixed.html">
-													Horizontal Menu Fixed
-												</a>
-											</li>
-											<li>
-												<a href="layouts_horizontal_sidebar_menu.html">
-													Horizontal &amp; Sidebar Menu
-												</a>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<a href="layouts_sidebar_closed.html">
-											<span class="title"> Sidebar Closed </span>
+										<a href="{{ url('/data_provinsi') }}">
+											<span class="title"> Data Pusat </span><span class="label label-default pull-right ">100</span>
 										</a>
 									</li>
 									<li>
-										<a href="layouts_sidebar_not_fixed.html">
-											<span class="title"> Sidebar Not Fixed </span>
+										<a href="#">
+											<span class="title"> Data Provinsi </span><span class="label label-default pull-right ">210</span>
 										</a>
 									</li>
 									<li>
-										<a href="layouts_boxed_layout.html">
-											<span class="title"> Boxed Layout </span>
-										</a>
-									</li>
-									<li>
-										<a href="layouts_footer_fixed.html">
-											<span class="title"> Footer Fixed </span>
-										</a>
-									</li>
-									<li>
-										<a href="layouts_single_page.html">
-											<span class="title"> Single-Page Interface </span>
+										<a href="#">
+											<span class="title"> Data Kabupaten </span><span class="label label-default pull-right ">320</span>
 										</a>
 									</li>
 								</ul>
@@ -413,6 +382,8 @@
 		<script src="{{ asset('') }}assets-admin/plugins/jquery.sparkline/jquery.sparkline.js"></script>
 		<script src="{{ asset('') }}assets-admin/plugins/easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
 		<script src="{{ asset('') }}assets-admin/js/index.js"></script>
+		<script type="text/javascript" src="{{ asset('') }}assets-admin/plugins/select2/select2.min.js"></script>
+		<script type="text/javascript" src="{{ asset('') }}assets-admin/js/table-data.js"></script>
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- start: CORE JAVASCRIPTS  -->
 		<script src="{{ asset('') }}assets-admin/js/main.js"></script>
@@ -420,8 +391,9 @@
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
-				SVExamples.init();
+				//SVExamples.init();
 				Index.init();
+				TableData.init();
 			});
 		</script>
 	</body>
