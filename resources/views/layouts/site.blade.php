@@ -256,11 +256,7 @@
                                             My Profile
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="#">
-                                            Manage Account
-                                        </a>
-                                    </li>
+                                        
                                     <li>
                                         <a href="{{ url('/logout') }}">
                                             Log Out
