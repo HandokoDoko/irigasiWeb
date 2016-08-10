@@ -19,3 +19,5 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/detail', 'HomeController@detail');
+Route::get('/admin', 'HomeController@admin');
+Route::get('/data_provinsi', 'HomeController@data_provinsi');

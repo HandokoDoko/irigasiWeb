@@ -31,4 +31,14 @@ class HomeController extends Controller
     {
         return view('detail');
     }
+
+    public function admin()
+    {
+        return view('admin');
+    }
+
+    public function data_provinsi()
+    {
+        return view('data_prov');
+    }
 }
