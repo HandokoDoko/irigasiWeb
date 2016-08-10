@@ -41,4 +41,9 @@ class HomeController extends Controller
     {
         return view('data_prov');
     }
+
+    public function tambah_data()
+    {
+        return view('input_data');
+    }
 }
