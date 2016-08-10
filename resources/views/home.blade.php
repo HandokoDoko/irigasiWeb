@@ -125,7 +125,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-7 col-md-8">
-                                                    <form action="#" role="form" id="form">
+                                                    <form action="#" role="form" id="form" method="post">
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <h3>Edit Profile Anda</h3>
@@ -150,7 +150,7 @@
                                                             <label class="control-label">
                                                                 Password
                                                             </label>
-                                                            <input placeholder="password" class="form-control" required name="password" id="password" type="password">
+                                                            <input placeholder="password" class="form-control"  name="password" id="password" type="password">
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="control-label">
@@ -184,7 +184,7 @@
                                                             <label class="control-label">
                                                                 Confirm Password
                                                             </label>
-                                                            <input placeholder="password" class="form-control" required id="password_again" name="password_again" type="password" >
+                                                            <input placeholder="password" class="form-control"  id="password_again" name="password_again" type="password" >
                                                         </div>
                                                         <div class="form-group">
                                                             <label>
@@ -212,6 +212,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <input type="hidden" name="_method" value="put">
+                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                 <div class="row">
                                                     <div class="col-md-8">
                                                         <p>
