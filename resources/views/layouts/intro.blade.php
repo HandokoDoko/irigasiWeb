@@ -255,11 +255,7 @@
                                             My Profile
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="#">
-                                            Manage Account
-                                        </a>
-                                    </li>
+                                    
                                     <li>
                                         <a href="{{ url('/logout') }}">
                                             Log Out
@@ -277,6 +273,17 @@
                     @if (Auth::guest())
                     <div class="collapse navbar-collapse" style="min-height: 63px ! important;">
                         <ul class="nav navbar-nav navbar-right navbar-uppercase">
+                            <li>
+                                <a href="#" data-scroll="true" data-id="#workflow">
+                                    Tentang Kami
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-scroll="true" data-id="#projects">
+                                    Data Irigasi
+                                </a>
+                            </li>
+                        </li>
                             <li>
                                 <a href="{{ url('/register') }}" data-scroll="true">
                                 Sign Up
