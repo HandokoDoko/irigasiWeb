@@ -92,64 +92,7 @@
 						</div>
 					</div>
 					<!-- end: SLIDING BAR FIRST COLUMN -->
-					<!-- start: SLIDING BAR SECOND COLUMN -->
-					<div class="col-md-4 col-sm-4">
-						<h2>My Recent Works</h2>
-						<div class="blog-photo-stream margin-bottom-30">
-							<ul class="list-unstyled">
-								<li>
-									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image01_th.jpg"></a>
-								</li>
-								<li>
-									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image02_th.jpg"></a>
-								</li>
-								<li>
-									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image03_th.jpg"></a>
-								</li>
-								<li>
-									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image04_th.jpg"></a>
-								</li>
-								<li>
-									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image05_th.jpg"></a>
-								</li>
-								<li>
-									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image06_th.jpg"></a>
-								</li>
-								<li>
-									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image07_th.jpg"></a>
-								</li>
-								<li>
-									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image08_th.jpg"></a>
-								</li>
-								<li>
-									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image09_th.jpg"></a>
-								</li>
-								<li>
-									<a href="#"><img alt="" src="{{ asset('') }}assets-admin/images/image10_th.jpg"></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<!-- end: SLIDING BAR SECOND COLUMN -->
-					<!-- start: SLIDING BAR THIRD COLUMN -->
-					<div class="col-md-4 col-sm-4">
-						<h2>My Info</h2>
-						<address class="margin-bottom-40">
-							Peter Clark
-							<br>
-							12345 Street Name, City Name, United States
-							<br>
-							P: (641)-734-4763
-							<br>
-							Email:
-							<a href="#">
-								peter.clark@example.com
-							</a>
-						</address>
-						<a class="btn btn-transparent-white" href="#">
-							<i class="fa fa-pencil"></i> Edit
-						</a>
-					</div>
+					
 					<!-- end: SLIDING BAR THIRD COLUMN -->
 				</div>
 				<div class="row">
@@ -187,23 +130,8 @@
 								</a>
 								<ul class="dropdown-menu dropdown-dark">
 									<li>
-										<a href="pages_user_profile.html">
+										<a href="{{ url('/home') }}">
 											My Profile
-										</a>
-									</li>
-									<li>
-										<a href="pages_calendar.html">
-											My Calendar
-										</a>
-									</li>
-									<li>
-										<a href="pages_messages.html">
-											My Messages (3)
-										</a>
-									</li>
-									<li>
-										<a href="login_lock_screen.html">
-											Lock Screen
 										</a>
 									</li>
 									<li>
@@ -240,9 +168,6 @@
 							<div class="inline-block">
 								<h5 class="no-margin"> Administrator </h5>
 								<h4 class="no-margin"> {{ ucfirst(Auth::user()->name) }} </h4>
-								<a class="btn user-options sb_toggle">
-									Edit <i class="fa fa-cog"></i>
-								</a>
 							</div>
 						</div>
 						<!-- start: MAIN NAVIGATION MENU -->
