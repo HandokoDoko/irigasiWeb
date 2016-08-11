@@ -115,8 +115,11 @@
 							<i class="fa fa-bars"></i>
 						</a>
 						<!-- start: LOGO -->
-						<a class="navbar-brand" href="index-2.html">
-							diSerdang Bedagai System
+
+						<a class="navbar-brand" href="/">
+							diSerdang Bedagai
+
+						
 						</a>
 						<!-- end: LOGO -->
 					</div>
@@ -132,6 +135,11 @@
 									<li>
 										<a href="{{ url('/home') }}">
 											My Profile
+										</a>
+									</li>
+									<li>
+										<a href="{{ url('/admin') }}">
+											Dashboard
 										</a>
 									</li>
 									<li>
