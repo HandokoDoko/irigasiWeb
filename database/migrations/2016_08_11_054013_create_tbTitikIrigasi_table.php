@@ -12,7 +12,7 @@ class CreateTbTitikIrigasiTable extends Migration
      */
     public function up()
     {
-        Schema::create('titiIrigasi', function (Blueprint $table) {
+        Schema::create('titikIrigasi', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idIrigasi');
             $table->string('nama');
@@ -31,6 +31,6 @@ class CreateTbTitikIrigasiTable extends Migration
      */
     public function down()
     {
-        Schema::drop('titiIrigasi');
+        Schema::drop('titikIrigasi');
     }
 }
