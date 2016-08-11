@@ -115,7 +115,7 @@
 							<i class="fa fa-bars"></i>
 						</a>
 						<!-- start: LOGO -->
-						<a class="navbar-brand" href="index-2.html">
+						<a class="navbar-brand" href="/">
 							diSerdang Bedagai
 						</a>
 						<!-- end: LOGO -->

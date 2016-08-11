@@ -3239,27 +3239,23 @@ body.login {
 }
 
 body.login .main-login {
-  margin-top: 60px;
   position: relative;
 }
 
 body.login .logo {
-  padding: 20px;
   text-align: center;
 }
 
 body.login .box-login, body.login .box-forgot, body.login .box-register {
   background: #FFFFFF;
-  border-radius: 5px;
-  overflow: hidden;
-  padding: 15px;
-  position: absolute;
-  top: 60px;
+  position: relative;
+  top: -60px;
   left: 0;
   right: 0;
 }
 
 body.login .box-login, body.login .box-forgot, body.login .box-register {
+
   display: none;
 }
 
@@ -3306,7 +3302,6 @@ body.login .form-actions:after {
 }
 
 body.login .form-actions {
-  margin-top: 15px;
   padding-top: 10px;
   display: block;
 }

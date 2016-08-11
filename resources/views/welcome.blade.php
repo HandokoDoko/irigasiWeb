@@ -132,7 +132,7 @@
     </div>
 
     <div class="section section-we-made-3" id="projects">
-        <div class="container">
+       <!-- <div class="container">
             <div class="row">
                 <div class="title add-animation">
                     <h2>Our Famous cer-template</h2>
@@ -144,7 +144,7 @@
             </div>
         </div>
         <div class="container">
-            <div class="row">
+             <div class="row">
 
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="project add-animation animation-1">
@@ -252,7 +252,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
