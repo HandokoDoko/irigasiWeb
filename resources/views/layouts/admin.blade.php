@@ -138,6 +138,11 @@
 										</a>
 									</li>
 									<li>
+										<a href="{{ url('/admin') }}">
+											Dashboard
+										</a>
+									</li>
+									<li>
 										<a href="{{ url('/logout') }}">
 											Log Out
 										</a>
