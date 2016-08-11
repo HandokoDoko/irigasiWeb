@@ -8,6 +8,9 @@
 		<link rel="stylesheet" href="assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css">
 		<link rel="stylesheet" href="assets/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
 		<link rel="stylesheet" href="assets/plugins/jQuery-Tags-Input/jquery.tagsinput.css">
+		<link rel="stylesheet" href="assets/plugins/bootstrap-social-buttons/bootstrap-social.css">
+		<link rel="stylesheet" href="assets/plugins/ladda-bootstrap/dist/ladda.min.css">
+		<link rel="stylesheet" href="assets/plugins/ladda-bootstrap/dist/ladda-themeless.min.css">
 @endsection
 
 @section('content')
@@ -151,10 +154,31 @@
 												</div>
 											</div>
 										</form>
+
+											<button data-style="expand-right" class="ladda-button" data-color="green">
+												Simpan <i class="fa fa-arrow-circle-right"></i>
+											</button>
 									</div>
 								</div>
 								<!-- end: TEXT FIELDS PANEL -->
 							</div>
 						</div>
 						</div>
+@endsection
+
+@section('js')
+<script src="assets/plugins/ladda-bootstrap/dist/spin.min.js"></script>
+<script src="assets/plugins/ladda-bootstrap/dist/ladda.min.js"></script>
+<script src="assets/js/ui-buttons.js"></script>
+@endsection
+@section('mainjs')
+	<script>
+		jQuery(document).ready(function() {
+			Main.init();
+			//SVExamples.init();
+			Index.init();
+			TableData.init();
+			UIButtons.init();
+		});
+	</script>
 @endsection

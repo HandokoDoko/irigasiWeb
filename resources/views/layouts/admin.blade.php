@@ -116,7 +116,7 @@
 						</a>
 						<!-- start: LOGO -->
 						<a class="navbar-brand" href="index-2.html">
-							diSerdang Bedagai
+							diSerdang Bedagai System
 						</a>
 						<!-- end: LOGO -->
 					</div>
@@ -309,18 +309,12 @@
 		<script src="{{ asset('') }}assets-admin/js/index.js"></script>
 		<script type="text/javascript" src="{{ asset('') }}assets-admin/plugins/select2/select2.min.js"></script>
 		<script type="text/javascript" src="{{ asset('') }}assets-admin/js/table-data.js"></script>
+        @yield('js')
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- start: CORE JAVASCRIPTS  -->
 		<script src="{{ asset('') }}assets-admin/js/main.js"></script>
 		<!-- end: CORE JAVASCRIPTS  -->
-		<script>
-			jQuery(document).ready(function() {
-				Main.init();
-				//SVExamples.init();
-				Index.init();
-				TableData.init();
-			});
-		</script>
+        @yield('mainjs')
 	</body>
 	<!-- end: BODY -->
 
