@@ -11,6 +11,13 @@
 		<link rel="stylesheet" href="assets/plugins/bootstrap-social-buttons/bootstrap-social.css">
 		<link rel="stylesheet" href="assets/plugins/ladda-bootstrap/dist/ladda.min.css">
 		<link rel="stylesheet" href="assets/plugins/ladda-bootstrap/dist/ladda-themeless.min.css">
+		<style>
+			#map {
+			width: 100%;
+			height: 400px;
+			margin-bottom: 10px;
+			}
+		</style>
 @endsection
 
 @section('content')
@@ -86,7 +93,7 @@
 													Nama Pengambilan
 												</label>
 												<div class="col-sm-5">
-													<input type="text" placeholder="Nama Pengamblan" id="form-field-1" class="form-control">
+													<input type="text" placeholder="Nama Pengambilan" id="form-field-1" class="form-control">
 												</div>
 											</div>
 											<div class="form-group">
@@ -153,11 +160,40 @@
 													<input type="text" placeholder="Debit Air" id="form-field-2" class="form-control">
 												</div>
 											</div>
+											<div class="form-group">
+												<label class="col-sm-2 control-label" for="form-field-2">
+													Input Titik
+												</label>
+												<div class="col-sm-5">
+													<div class="input-group">
+														<input id="origin-input" type="text" value="" class="form-control controls" id="selected-color1">
+														<span class="btn input-group-addon btn-green" data-toggle="dropdown"> <i class="fa fa-plus-circle"></i> Tambah</span>
+													</div>
+												</div>
+											</div>
+											<div class="from-group">
+												<div class="col-sm-7" align="center">
+								                    <div id="map"></div>
+								                     <script>
+								                      function initMap() {
+								                        var mapDiv = document.getElementById('map');
+								                        var map = new google.maps.Map(mapDiv, {
+								                            center: {lat: 3.397998, lng: 99.070280},
+								                            zoom: 10
+								                        });
+								                      }
+								                    </script>
+								                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWYOBR2vNEocvI6JG-oF1sGVPQz4gF5GQ&callback=initMap">
+								                    </script>
+												</div>
+											</div>
 										</form>
-
-											<button data-style="expand-right" class="ladda-button" data-color="green">
-												Simpan <i class="fa fa-arrow-circle-right"></i>
-											</button>
+										<div class="from-group">
+											<div class="col-sm-7" align="center">
+												<button data-style="expand-right" class="ladda-button" data-color="green"> Simpan <i class="fa fa-arrow-circle-right"></i>
+												</button>
+											</div>
+										</div>
 									</div>
 								</div>
 								<!-- end: TEXT FIELDS PANEL -->
@@ -167,9 +203,9 @@
 @endsection
 
 @section('js')
-<script src="assets/plugins/ladda-bootstrap/dist/spin.min.js"></script>
-<script src="assets/plugins/ladda-bootstrap/dist/ladda.min.js"></script>
-<script src="assets/js/ui-buttons.js"></script>
+<script src="assets-admin/plugins/ladda-bootstrap/dist/spin.min.js"></script>
+<script src="assets-admin/plugins/ladda-bootstrap/dist/ladda.min.js"></script>
+<script src="assets-admin/js/ui-buttons.js"></script>
 @endsection
 @section('mainjs')
 	<script>
