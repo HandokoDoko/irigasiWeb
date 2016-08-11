@@ -30,7 +30,19 @@ class ProfileController extends Controller
       $user->name=$request->name;
       $user->nip=$request->nip;
       $user->username=$request->username;
-      $user->pic=$request->pic;
+      
+      if($request->hasFile('pic')) {
+            $file = Input::file('pic');
+            //getting timestamp
+            $timestamp = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString());
+            
+            $name = $timestamp. '-' .$file->getClientOriginalName();
+            
+            $image->filePath = $name;
+
+            $file->move(public_path().'/img/profile', $name);
+            $user->pic=$request->pic;
+        }
       //$user->password=$request->password;
       $user->desc=$request->desc;
       $user->save();
