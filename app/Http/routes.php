@@ -22,3 +22,4 @@ Route::get('/detail', 'HomeController@detail');
 Route::get('/admin', 'HomeController@admin');
 Route::get('/data_provinsi', 'HomeController@data_provinsi');
 Route::get('/tambah_data', 'HomeController@tambah_data');
+Route::put('/profile/{id}', 'ProfileController@update');

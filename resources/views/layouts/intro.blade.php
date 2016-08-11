@@ -285,11 +285,6 @@
                             </li>
                         </li>
                             <li>
-                                <a href="{{ url('/register') }}" data-scroll="true">
-                                Sign Up
-                                </a>
-                            </li>
-                            <li>
                                 <a href="{{ url('/login') }}" data-scroll="true">
                                 Login
                                 </a>

@@ -72,36 +72,20 @@ class AuthController extends Controller
         ]);
     }
 
-    protected function edit($id)
+    public function edit($id)
     {
         return User::create([
             'name' => $data['name'],
+            'username' => $data['username'],
+            'pic' => $data['name'],
+            'phone' => $data['name'],
+            'desc' => $data['desc'],
+
             'nip' => $data['nip'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
     }
 
-    protected function update(Request $request,$id)
-    {
-      $this->validate($request,[
-        'name'=>'required',
-        'nip'=>'required',
-        'username'=>'required',
-        'email'=>'required',
-        'password' => 'min:6|confirmed',
-
-        ]);
-      $user= User::find($id);
-      $user->name=$request->name;
-      $user->nip=$request->nip;
-      $user->username=$request->username;
-      $user->pic=$request->pic;
-      $user->phone=$request->phone;
-      $user->password=$request->password;
-      $user->desc=$request->desc;
-      $user->save();
-      return redirect('home');
-    }
-
+    
 }

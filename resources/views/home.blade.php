@@ -94,11 +94,7 @@
                                                                         <td>{{ Auth::user()->email }}</td>
                                                                         <td></td>
                                                                     </tr>
-                                                                    <tr>
-                                                                        <td>Telephon</td>
-                                                                        <td>{{ Auth::user()->phone }}</td>
-                                                                        <td></td>
-                                                                    </tr>
+                                                                    
                                                                     <tr>
                                                                         <td>Status</td>
                                                                         <td><span class="label label-sm label-info">Administrator</span></td>
@@ -115,8 +111,7 @@
                                                                 </thead>
                                                                 <tbody>
                                                                     <tr>
-                                                                        <td>Description</td>
-                                                                        <td>{{ Auth::user()->description }}</td>
+                                                                        <td>{{ Auth::user()->desc }}</td>
                                                                         <td></td>
                                                                     </tr>
                                                                 </tbody>
@@ -125,7 +120,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-7 col-md-8">
-                                                    <form action="#" role="form" id="form" method="post">
+                                                    <form action="profile/{{ Auth::user()->id }}" role="form" id="form" method="post">
+                                                    {{ csrf_field() }}
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <h3>Edit Profile Anda</h3>
@@ -137,32 +133,58 @@
                                                                 Nama Lengkap
                                                             </label>
                                                             <input placeholder="Peter" class="form-control" required="" id="name" name="name" type="text" value="{{ Auth::user()->name }}">
+                                                            @if ($errors->has('name'))
+                                                                <span class="help-block">
+                                                                    <strong>{{ $errors->first('name') }}</strong>
+                                                                </span>
+                                                            @endif
                                                         </div>
                                                         
-                                                        <div class="form-group">
-                                                            <label class="control-label">
-                                                                Email
-                                                            </label> 
-                                                            <input placeholder="peter@example.com" required class="form-control" id="email" name="email" type="email" value="{{ Auth::user()->email }}">
-                                                        </div>
-                                                       
+                                                        
                                                         <div class="form-group">
                                                             <label class="control-label">
                                                                 Password
                                                             </label>
                                                             <input placeholder="password" class="form-control"  name="password" id="password" type="password">
+                                                            @if ($errors->has('password'))
+                                                                <span class="help-block">
+                                                                    <strong>{{ $errors->first('password') }}</strong>
+                                                                </span>
+                                                            @endif
                                                         </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label">
+                                                                Email
+                                                            </label> 
+                                                            <input placeholder="peter@example.com" required class="form-control" id="email" name="email" type="email" value="{{ Auth::user()->email }}">
+                                                            @if ($errors->has('email'))
+                                                                <span class="help-block">
+                                                                    <strong>{{ $errors->first('email') }}</strong>
+                                                                </span>
+                                                            @endif
+                                                        </div>
+                                                       
                                                         <div class="form-group">
                                                             <label class="control-label">
                                                                 Nip
                                                             </label>
-                                                            <input placeholder="NIP" class="form-control" required name="Nip" id="password" type="password" value="{{ Auth::user()->nip }}">
+                                                            <input placeholder="NIP" class="form-control" required name="nip" id="nip" type="nip" value="{{ Auth::user()->nip }}">
+                                                            @if ($errors->has('nip'))
+                                                                <span class="help-block">
+                                                                    <strong>{{ $errors->first('nip') }}</strong>
+                                                                </span>
+                                                            @endif
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="control-label">
                                                                 Informasi Tambahan
                                                             </label>
-                                                            <textarea placeholder="Desc...." id="desc" name="desc" class="form-control" value="{{ Auth::user()->desc }}"></textarea>
+                                                            <textarea placeholder="kett..." id="desc" name="desc" class="form-control">{{ Auth::user()->desc }}</textarea>
+                                                            @if ($errors->has('desc'))
+                                                                <span class="help-block">
+                                                                    <strong>{{ $errors->first('desc') }}</strong>
+                                                                </span>
+                                                            @endif
                                                         </div>
 
 
@@ -172,19 +194,24 @@
                                                             <label class="control-label">
                                                                 Username
                                                             </label>
-                                                            <input placeholder="Clark" class="form-control" required id="username" name="username" type="text" value="{{ Auth::user()->username }}">
+                                                            <input placeholder="username" class="form-control" required id="username" name="username" type="text" value="{{ Auth::user()->username }}">
+                                                            @if ($errors->has('username'))
+                                                                <span class="help-block">
+                                                                    <strong>{{ $errors->first('username') }}</strong>
+                                                                </span>
+                                                            @endif
                                                         </div>
-                                                         <div class="form-group">
-                                                            <label class="control-label">
-                                                                Telepon
-                                                            </label>
-                                                            <input placeholder="(641)-734-4763" class="form-control" id="phone" name="phone" type="tel" value="{{ Auth::user()->phone }}">
-                                                        </div>
+                                                         
                                                         <div class="form-group">
                                                             <label class="control-label">
                                                                 Confirm Password
                                                             </label>
                                                             <input placeholder="password" class="form-control"  id="password_again" name="password_again" type="password" >
+                                                            @if ($errors->has('password_confirmation'))
+                                                                <span class="help-block">
+                                                                    <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                                                </span>
+                                                            @endif
                                                         </div>
                                                         <div class="form-group">
                                                             <label>
