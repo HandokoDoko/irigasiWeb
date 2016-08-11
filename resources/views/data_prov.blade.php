@@ -87,7 +87,7 @@
 								<td>1.</td>
 								<td class="hidden-xs">AEK BOLON</td>
 								<td>Kecamatan Serdang</td>
-								<td class="hidden-xs">Lihat</td>
+								<td class="hidden-xs"><a href="{{ url('/detail') }}">Lihat</a></td>
 							</tr>
 						</tbody>
 					</table>
