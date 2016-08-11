@@ -55,3 +55,14 @@
     </div>
 </div>
 @endsection
+
+@section('mainjs')
+    <script>
+        jQuery(document).ready(function() {
+            Main.init();
+            //SVExamples.init();
+            Index.init();
+            TableData.init();
+        });
+    </script>
+@endsection
