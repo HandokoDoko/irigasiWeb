@@ -14,7 +14,7 @@ class ProfileController extends Controller
             'name' => 'required|max:255',
             'nip' => 'required|max:15',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'password' => 'min:6|confirmed',
         ]);
     }
     public function update(Request $request,$id)
@@ -24,6 +24,7 @@ class ProfileController extends Controller
         'nip'=>'required',
         'username'=>'required',
         'email'=>'required',
+        'password' => 'min:6|confirmed',
         //'password' => 'min:6|confirmed',
         ]);
       $user= Profile::find($id);
@@ -31,7 +32,7 @@ class ProfileController extends Controller
       $user->nip=$request->nip;
       $user->username=$request->username;
       
-      if($request->hasFile('pic')) {
+      /*if($request->hasFile('pic')) {
             $file = Input::file('pic');
             //getting timestamp
             $timestamp = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString());
@@ -42,8 +43,10 @@ class ProfileController extends Controller
 
             $file->move(public_path().'/img/profile', $name);
             $user->pic=$request->pic;
+        }*/
+        if($request->password!=null){
+          $user->password= bcrypt($request->password);
         }
-      //$user->password=$request->password;
       $user->desc=$request->desc;
       $user->save();
       return redirect('home');

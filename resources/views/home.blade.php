@@ -116,6 +116,7 @@
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
+                                                            <br><br><br><br><br><br><br><br><br><br><br><br><br>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -129,7 +130,7 @@
                                                         <hr>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <div class="form-group">
+                                                        <div class="form-group  {{ $errors->has('name') ? ' has-error' : '' }}">
                                                             <label class="control-label">
                                                                 Nama Lengkap
                                                             </label>
@@ -141,8 +142,18 @@
                                                             @endif
                                                         </div>
                                                         
-                                                        
-                                                        <div class="form-group">
+                                                        <div class="form-group  {{ $errors->has('nip') ? ' has-error' : '' }}">
+                                                            <label class="control-label">
+                                                                Nip
+                                                            </label>
+                                                            <input placeholder="Peter" class="form-control" required="" id="nip" name="nip" type="text" value="{{ Auth::user()->nip }}">
+                                                            @if ($errors->has('nip'))
+                                                                <span class="help-block">
+                                                                    <strong>{{ $errors->first('name') }}</strong>
+                                                                </span>
+                                                            @endif
+                                                        </div>
+                                                        <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
                                                             <label class="control-label">
                                                                 Password
                                                             </label>
@@ -153,30 +164,21 @@
                                                                 </span>
                                                             @endif
                                                         </div>
-                                                        <div class="form-group">
+
+                                                        <div class="form-group {{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                                                             <label class="control-label">
-                                                                Email
-                                                            </label> 
-                                                            <input placeholder="peter@example.com" required class="form-control" id="email" name="email" type="email" value="{{ Auth::user()->email }}">
-                                                            @if ($errors->has('email'))
-                                                                <span class="help-block">
-                                                                    <strong>{{ $errors->first('email') }}</strong>
-                                                                </span>
-                                                            @endif
-                                                        </div>
-                                                       
-                                                        <div class="form-group">
-                                                            <label class="control-label">
-                                                                Nip
+                                                                Confirm Password
                                                             </label>
-                                                            <input placeholder="NIP" class="form-control" required name="nip" id="nip" type="nip" value="{{ Auth::user()->nip }}">
-                                                            @if ($errors->has('nip'))
+                                                            <input placeholder="confrimation password" class="form-control"  id="password_confirmation" name="password_confirmation" type="password" >
+                                                            @if ($errors->has('password_confirmation'))
                                                                 <span class="help-block">
-                                                                    <strong>{{ $errors->first('nip') }}</strong>
+                                                                    <strong>{{ $errors->first('password_confirmation') }}</strong>
                                                                 </span>
                                                             @endif
                                                         </div>
-                                                        <div class="form-group">
+                                                    
+                                                        
+                                                        <div class="form-group  {{ $errors->has('desc') ? ' has-error' : '' }}">
                                                             <label class="control-label">
                                                                 Informasi Tambahan
                                                             </label>
@@ -191,30 +193,30 @@
 
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <div class="form-group">
+                                                        <div class="form-group  {{ $errors->has('username') ? ' has-error' : '' }}">
                                                             <label class="control-label">
                                                                 Username
                                                             </label>
-                                                            <input placeholder="username" class="form-control" required id="username" name="username" type="text" value="{{ Auth::user()->username }}">
+                                                            <input placeholder="Peter" class="form-control" required="" id="username" name="username" type="text" value="{{ Auth::user()->username }}">
                                                             @if ($errors->has('username'))
                                                                 <span class="help-block">
                                                                     <strong>{{ $errors->first('username') }}</strong>
                                                                 </span>
                                                             @endif
                                                         </div>
-                                                         
-                                                        <div class="form-group">
+                                                         <div class="form-group  {{ $errors->has('email') ? ' has-error' : '' }}">
                                                             <label class="control-label">
-                                                                Confirm Password
-                                                            </label>
-                                                            <input placeholder="password" class="form-control"  id="password_again" name="password_again" type="password" >
-                                                            @if ($errors->has('password_confirmation'))
+                                                                Email
+                                                            </label> 
+                                                            <input placeholder="peter@example.com" required class="form-control" id="email" name="email" type="email" value="{{ Auth::user()->email }}">
+                                                            @if ($errors->has('email'))
                                                                 <span class="help-block">
-                                                                    <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                                                    <strong>{{ $errors->first('email') }}</strong>
                                                                 </span>
                                                             @endif
                                                         </div>
-                                                        <div class="form-group">
+                                                        
+                                                        <div class="form-group  {{ $errors->has('pic') ? ' has-error' : '' }}">
                                                             <label>
                                                                 Image Upload
                                                             </label>
@@ -242,13 +244,48 @@
                                                 </div>
                                                 <input type="hidden" name="_method" value="put">
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                <div class="col-md-12">
+                                                        <h3>Edit Password</h3>
+                                                        <hr>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                       
+                                                       
+                                                        <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
+                                                            <label class="control-label">
+                                                                Password
+                                                            </label>
+                                                            <input placeholder="password" class="form-control"  name="password" id="password" type="password">
+                                                            @if ($errors->has('password'))
+                                                                <span class="help-block">
+                                                                    <strong>{{ $errors->first('password') }}</strong>
+                                                                </span>
+                                                            @endif
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group {{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                                                            <label class="control-label">
+                                                                Confirm Password
+                                                            </label>
+                                                            <input placeholder="confrimation password" class="form-control"  id="password_confirmation" name="password_confirmation" type="password" >
+                                                            @if ($errors->has('password_confirmation'))
+                                                                <span class="help-block">
+                                                                    <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                                                </span>
+                                                            @endif
+                                                        </div>
+                                                    
+                                                    </div>
                                                 <div class="row">
                                                     <div class="col-md-8">
-                                                        <p>
+                                                        <p><br><br>
                                                             By clicking UPDATE, you are agreeing to the Policy and Terms &amp; Conditions.
                                                         </p>
                                                     </div>
                                                     <div class="col-md-4">
+                                                    <br><br>
                                                         <button class="btn btn-green btn-block" type="submit">
                                                             Update <i class="fa fa-arrow-circle-right"></i>
                                                         </button>
