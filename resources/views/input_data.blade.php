@@ -166,7 +166,7 @@
 												</label>
 												<div class="col-sm-5">
 													<div class="input-group">
-														<input id="origin-input" type="text" value="" class="form-control controls" id="selected-color1">
+														<input type="text" value="" class="form-control controls" id="carimap">
 														<span class="btn input-group-addon btn-green" data-toggle="dropdown"> <i class="fa fa-plus-circle"></i> Tambah</span>
 													</div>
 												</div>
@@ -181,9 +181,30 @@
 								                            center: {lat: 3.397998, lng: 99.070280},
 								                            zoom: 10
 								                        });
+								                        var marker = new google.maps.Marker({
+								                        	position:{lat: 3.397998, lng: 99.070280},
+								                        	map:map,
+								                        	draggable: true
+								                        });
+								                        var cariPlace = new google.maps.places.SearchBox(document.getElementById('carimap'));
+
+								                        google.maps.event.addListener(cariPlace, 'places_changed', function(){
+								                        	var places = cariPlace.getPlaces();
+
+								                        	var bounds = new google.maps.LatLngBounds();
+								                        	var i, place;
+								                        	for (i = 0; place=places[i]; i++) {
+								                        		bounds.extend(place.geometry.location);
+								                        		marker.setPosition(place.geometry.location);
+								                        	}
+								                        	alert(bounds.text);
+
+								                        	map.fitBounds(bounds);
+								                        	map.setZoom(15);
+								                        })
 								                      }
 								                    </script>
-								                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWYOBR2vNEocvI6JG-oF1sGVPQz4gF5GQ&callback=initMap">
+								                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWYOBR2vNEocvI6JG-oF1sGVPQz4gF5GQ&callback=initMap&libraries=places">
 								                    </script>
 												</div>
 											</div>
