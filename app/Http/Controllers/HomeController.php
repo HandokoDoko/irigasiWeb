@@ -63,7 +63,13 @@ class HomeController extends Controller
          $index=$irigasi->kewenangan;
          $irigasi->delete();
          //dd($index);
-         return redirect('/data/{index}');
+         if($index=="1"){
+        return redirect('data/1');
+    }
+      else if($index=="2"){ 
+        return redirect('data/2');}
+      else if($index=='3'){
+       return redirect('data/3');}
     }
     public function simpanDi(Request $request)
     {

@@ -243,7 +243,6 @@
 												<button data-style="expand-right" class="ladda-button" data-color="green"> Simpan <i class="fa fa-arrow-circle-right"></i>
 												</button>
 											</div>
-											<input type="submit" name="submit">
 										</div>
 											
 										</form>

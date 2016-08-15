@@ -193,7 +193,7 @@
 								<ul class="sub-menu">
 									<li>
 										<a href="{{ url('/data/1') }}">
-											<span class="title"> Data Pusat </span><span class="label label-default pull-right ">100</span>
+											<span class="title"> Data Pusat </span><span class="label label-default pull-right ">{{ $no=0}}</span>
 										</a>
 									</li>
 									<li>
