@@ -166,17 +166,20 @@
 												</label>
 												<div class="col-sm-5">
 													<div class="input-group">
-														<input type="text" value="" class="form-control controls" id="carimap">
-														<span class="btn input-group-addon btn-green" data-toggle="dropdown"> <i class="fa fa-plus-circle"></i> Tambah</span>
+													<input id="drajat" type="number" name="drajat" style="width:50px;"> <b>°</b>  <input id="menit" type="number" name="menit" style="width:50px;"> <b>'</b>  <input id="detik" type="number" name="detik" style="width:100px;"> <b>"</b> 
+													<select name="dms" id="dms">
+														<option value="S">S</option><option value="N">N</option>
+													</select>
+														<span class="btn input-group-addon btn-green" data-toggle="dropdown" id="tambah"> <i class="fa fa-plus-circle"></i> Tambah</span>
 													</div>
 												</div>
 											</div>
 											<div class="from-group">
 												<div class="col-sm-7" align="center">
 								                    <div id="map"></div>
-								                     <script>
+								                     <!-- <script>
 								                      function initMap() {
-								                        var mapDiv = document.getElementById('map');
+    													var mapDiv = document.getElementById('map');
 								                        var map = new google.maps.Map(mapDiv, {
 								                            center: {lat: 3.397998, lng: 99.070280},
 								                            zoom: 10
@@ -203,7 +206,7 @@
 								                        	map.setZoom(15);
 								                        })
 								                      }
-								                    </script>
+								                    </script> -->
 								                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWYOBR2vNEocvI6JG-oF1sGVPQz4gF5GQ&callback=initMap&libraries=places">
 								                    </script>
 												</div>
@@ -227,6 +230,17 @@
 <script src="assets-admin/plugins/ladda-bootstrap/dist/spin.min.js"></script>
 <script src="assets-admin/plugins/ladda-bootstrap/dist/ladda.min.js"></script>
 <script src="assets-admin/js/ui-buttons.js"></script>
+<script type="text/javascript">	
+    var drajat = document.getElementById('drajat');
+    var menit = document.getElementById('menit');
+    var detik = document.getElementById('detik');
+    var btnTambah = document.getElementById('tambah');
+    var milDet = 3600;
+    var hslDetik = milDet+"."+(parseFloat(menit.value)*60+parseFloat(detik.value));
+    btnTambah.addEventListener("click", function(){
+    	alert(parseFloat(parseFloat(drajat.value)+parseFloat(parseFloat(hslDetik)/3600)));
+    });
+</script>
 @endsection
 @section('mainjs')
 	<script>
@@ -236,6 +250,7 @@
 			Index.init();
 			TableData.init();
 			UIButtons.init();
+			FormElements.init();
 		});
 	</script>
 @endsection
