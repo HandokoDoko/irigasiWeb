@@ -11,7 +11,7 @@
     <div class="toolbar row">
         <div class="col-sm-6 hidden-xs">
             <div class="page-header">
-                <h1>Detail Data Provinsi</h1>
+                <h1>Detail Data daerah Irigasi</h1>
             </div>
         </div>
     </div>
