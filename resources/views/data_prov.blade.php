@@ -68,7 +68,7 @@
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-md-12 space20">
-							<a href="{{ url('tambah_data') }}" class="btn btn-green">
+							<a href="/tambah_data" class="btn btn-green">
 								Tambah Data <i class="fa fa-plus"></i>
 							</a>
 						</div>
@@ -83,13 +83,61 @@
 							</tr>
 						</thead>
 						<tbody>
+						{{ $no=0}}
+						@foreach($irigasi as $key => $data)
 							<tr>
-								<td>1.</td>
-								<td class="hidden-xs">AEK BOLON</td>
-								<td>Kecamatan Serdang</td>
-								<td class="hidden-xs"><a href="{{ url('/detail') }}">Lihat</a></td>
+								<td>{{ $no+=1 }}</td>
+								<td class="hidden-xs">{{ $data->nama }}</td>
+								<td>{{$data->Kecamatan}}</td>
+								<td <td class="center">
+									<form action="/data/remove/{{ $data->id}}" method="post">
+                                        <input type="hidden" class="form-control" id="token" name="_token" value="{{ csrf_token() }}">
+                                        <input type="hidden" name="_method" value="delete">
+                                        <a class="btn btn-red" href="#" onclick="$(this).closest('form').submit()"><i class="fa fa-times fa fa-white" width="10"></i></a>
+                                        <a class="btn btn-blue" href="/data/{{ $data->id}}/edit"><i class="fa fa-pencil"></i></a>
+                                    </form>
+								</td>
+								
+									<!-- <td class="center">
+								<div class="visible-md visible-lg hidden-sm hidden-xs">
+									<a href="#" class="btn btn-xs btn-blue tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+									<a href="#" class="btn btn-xs btn-green tooltips" data-placement="top" data-original-title="lihat"><i class="fa fa-share"></i></a>
+									<a href="#" class="btn btn-xs btn-red tooltips" data-placement="top" data-original-title="Remove"><i class="fa fa-times fa fa-white"></i></a>
+								</div>
+								<div class="visible-xs visible-sm hidden-md hidden-lg">
+									<div class="btn-group">
+										<a class="btn btn-green dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
+											<i class="fa fa-cog"></i> <span class="caret"></span>
+										</a>
+										<ul role="menu" class="dropdown-menu pull-right dropdown-dark">
+											<li>
+												<a role="menuitem" tabindex="-1" href="#">
+													<i class="fa fa-edit"></i> Edit
+												</a>
+											</li>
+											<li>
+												<a role="menuitem" tabindex="-1" href="#">
+													<i class="fa fa-share"></i> Share
+												</a>
+											</li>
+											
+											<li>
+											<form action="data/remove/{{$data->id}}" method="post" name="form">
+											<input type="hidden" name="_method" value="delete">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+												<a role="menuitem" tabindex="-1" onclick="$(this).closest('form').submit()">
+													<i class="fa fa-times" ></i> Remove
+												</a>
+											</form>
+											</li>
+											
+										</ul>
+									</div>
+								</div>
+								</td> -->
 							</tr>
 						</tbody>
+						@endforeach
 					</table>
 				</div>
 			</div>

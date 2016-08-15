@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Irigasi;
 
 class HomeController extends Controller
 {
@@ -36,14 +37,104 @@ class HomeController extends Controller
     {
         return view('admin');
     }
-
-    public function data_provinsi()
+    public function edit($id)
     {
-        return view('data_prov');
+        $irigasi=Irigasi::find($id);
+       // dd($irigasi);
+
+        return view('editData')->with('irigasi', $irigasi);
+    }
+
+    public function data_provinsi($id)
+    {
+        $irigasi=Irigasi::all();
+       // dd($irigasi);
+
+        return view('data_prov')->with('irigasi', $irigasi);
     }
 
     public function tambah_data()
     {
         return view('input_data');
     }
+     public function hapus($id)
+    {
+         $irigasi=Irigasi::find($id);
+         $index=$irigasi->kewenangan;
+         $irigasi->delete();
+         //dd($index);
+         return redirect('/data/{index}');
+    }
+    public function simpanDi(Request $request)
+    {
+      $this->validate($request,[
+        'nama'=>'required',/*
+        'nip'=>'required',
+        'username'=>'required',
+        'email'=>'required',
+        'password' => 'min:6|confirmed',*/
+        //'password' => 'min:6|confirmed',
+        ]);
+      $irigasi= new Irigasi;
+      $irigasi->nama=$request->nama;
+      $irigasi->kewenangan=$request->kewenangan;
+      $irigasi->Kecamatan=$request->Kecamatan;
+      $irigasi->jlhBendung=$request->jlhBendung;
+      $irigasi->luasArea=$request->luasArea;
+      $irigasi->panjangSaluran=$request->panjangSaluran;
+      $irigasi->saluranPrimer=$request->saluranPrimer;
+      $irigasi->jnsSaluranPrimer=$request->jnsSaluranPrimer;
+      $irigasi->saluranSkunder=$request->saluranSkunder;
+      $irigasi->jnsSaluranSkunder=$request->jnsSaluranSkunder;
+      $irigasi->debitAir=$request->debitAir;
+      
+      if($irigasi->kewenangan=="1"){
+        $irigasi->save();
+        return redirect('data/1');
+    }
+      else if($irigasi->kewenangan=="2"){ 
+        $irigasi->save();
+        return redirect('data/2');}
+      else if($irigasi->kewenangan=='3'){
+        $irigasi->save();
+       return redirect('data/3');}
+      
+    
+  }
+  public function editDi(Request $request,$id)
+    {
+      $this->validate($request,[
+        'nama'=>'required',/*
+        'nip'=>'required',
+        'username'=>'required',
+        'email'=>'required',
+        'password' => 'min:6|confirmed',*/
+        //'password' => 'min:6|confirmed',
+        ]);
+      $irigasi= Irigasi::find($id);
+      $irigasi->nama=$request->nama;
+      $irigasi->kewenangan=$request->kewenangan;
+      $irigasi->Kecamatan=$request->Kecamatan;
+      $irigasi->jlhBendung=$request->jlhBendung;
+      $irigasi->luasArea=$request->luasArea;
+      $irigasi->panjangSaluran=$request->panjangSaluran;
+      $irigasi->saluranPrimer=$request->saluranPrimer;
+      $irigasi->jnsSaluranPrimer=$request->jnsSaluranPrimer;
+      $irigasi->saluranSkunder=$request->saluranSkunder;
+      $irigasi->jnsSaluranSkunder=$request->jnsSaluranSkunder;
+      $irigasi->debitAir=$request->debitAir;
+      
+      if($irigasi->kewenangan=="1"){
+        $irigasi->save();
+        return redirect('data/1');
+    }
+      else if($irigasi->kewenangan=="2"){ 
+        $irigasi->save();
+        return redirect('data/2');}
+      else if($irigasi->kewenangan=='3'){
+        $irigasi->save();
+       return redirect('data/3');}
+      
+    
+  }
 }

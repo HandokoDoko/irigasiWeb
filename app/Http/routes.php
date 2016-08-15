@@ -21,8 +21,13 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 Route::get('/detail', 'HomeController@detail');
 Route::get('/admin', 'HomeController@admin');
-Route::get('/data_provinsi', 'HomeController@data_provinsi');
+Route::get('/data/{id}', 'HomeController@data_provinsi')->where('id', '[1-3]+');
 Route::get('/tambah_data', 'HomeController@tambah_data');
+
+Route::delete('/data/remove/{id}', 'HomeController@hapus');
+Route::put('/data/{id}/edit', 'HomeController@edit');
+
 Route::put('/profile/{id}', 'ProfileController@update');
+Route::put('/simpanDi', 'HomeController@simpanDi');
 Route::put('apply/upload', 'ProfileController@uploadImg');
 Route::resource('irigasi', 'IrigasiController');

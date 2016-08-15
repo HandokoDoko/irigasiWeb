@@ -192,17 +192,17 @@
 								<a href="javascript:void(0)"><i class="fa fa-desktop"></i> <span class="title"> Data Irigasi </span><i class="icon-arrow"></i> </a>
 								<ul class="sub-menu">
 									<li>
-										<a href="{{ url('/data_provinsi') }}">
+										<a href="{{ url('/data/1') }}">
 											<span class="title"> Data Pusat </span><span class="label label-default pull-right ">100</span>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="{{ url('/data/2') }}">
 											<span class="title"> Data Provinsi </span><span class="label label-default pull-right ">210</span>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="{{ url('/data/3') }}">
 											<span class="title"> Data Kabupaten </span><span class="label label-default pull-right ">320</span>
 										</a>
 									</li>
