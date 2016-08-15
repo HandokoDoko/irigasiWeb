@@ -16,7 +16,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <h1>di Serdang Bedagai</h1>
-                            <h5>Sistem Informasi Daerah Irigasi Pemerintah Provinsi Serdang Bedagai</h5>      
+                            <h5>Sistem Informasi Daerah Irigasi Pemerintah Kabupaten Serdang Bedagai</h5>      
                             <!--<p style="margin-top:100px">
                                 <a href="{{ url('/event/create') }}" class="btn btn-green">
                                     GET STARTED <i class="fa fa-arrow-circle-right"></i>

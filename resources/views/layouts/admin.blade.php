@@ -134,7 +134,12 @@
 								<ul class="dropdown-menu dropdown-dark">
 									<li>
 										<a href="{{ url('/home') }}">
-											My Profile
+											Profile
+										</a>
+									</li>
+									<li>
+										<a href="{{ url('/') }}">
+											Halaman Awal
 										</a>
 									</li>
 									<li>

@@ -45,7 +45,7 @@ class ProfileController extends Controller
  
   public function uploadImg(Request $request) {
      $this->validate($request,[
-        'file'=>'required|max:10000',
+        'file'=>'required|max:5000',
         ]);
    $user= Profile::find($request->id);
   // getting all of the post data
