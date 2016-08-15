@@ -52,27 +52,42 @@
                                                 <div class="col-sm-5 col-md-4">
                                                     <div class="user-left">
                                                         <div class="panel-body">
-                                                            <div class="center">
-                                                                <h4>{{ Auth::user()->name }}</h4>
-                                                                <div class="fileupload fileupload-new" data-provides="fileupload">
-                                                                    <div class="user-image">
-                                                                        @if(Auth::user()->pic==null)
-                                                                        <div class="fileupload-new thumbnail"><img src="{{ asset('') }}assets/img/profile/anonymous.jpg" alt=""></div>
-                                                                        @endif
-                                                                        @if(Auth::user()->pic!=null)
-                                                                        <div class="fileupload-new thumbnail"><img src="{{ asset('') }}assets/img/profile/{{ Auth::user()->pic }}.jpg" alt=""></div>
-                                                                        @endif
-                                                                        <div class="fileupload-preview fileupload-exists thumbnail"></div>
-                                                                        <div class="user-image-buttons">
-                                                                            
-                                                                            <a href="#" class="btn fileupload-exists btn-red btn-sm" data-dismiss="fileupload">
-                                                                                <i class="fa fa-times"></i>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
+                                                            {!!Form::open(array('url'=>'apply/upload','method'=>'POST','id'=>'frmPic','files'=>true))!!}
+
+                                                <input type="hidden" name="_method" value="put">
+                                                <input type="hidden" name="id" value="{{Auth::user()->id}}">
+                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                            <div class="form-group  {{ $errors->has('file') ? ' has-error' : '' }}">
+                                                            <label>
+                                                                Image Upload
+                                                            </label>
+                                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                                <div class="fileupload-new thumbnail">
+                                                                @if(Auth::user()->pic==null)
+                                                                    <img src="{{ asset('') }}assets/img/profile/anonymous.jpg" alt="">
+                                                                @endif
+                                                                @if(Auth::user()->pic!=null)
+                                                                    <img src="{{ asset('') }}assets/img/profile/{{ Auth::user()->pic }}" alt="">
+                                                                @endif
+                                                                </div>
+                                                                <div class="fileupload-preview fileupload-exists thumbnail"></div>
+                                                                <div class="user-edit-image-buttons">
+                                                                    <span class="btn btn-azure btn-file"><span class="fileupload-new"><i class="fa fa-picture"></i> Select image</span><span class="fileupload-exists"><i class="fa fa-picture"></i> Change</span>
+                                                                        <input type="file" name="file" id="file" value="{{Auth::user()->pic}}">
+                                                                    </span>
+                                                                    <a href="javascript:{}" onclick="document.getElementById('frmPic').submit();" class="btn fileupload-exists btn btn-purple">
+                                                                        <i class="fa fa-times fa-arrow-circle-right"></i> Upload
+                                                                    </a>
+                                                                    
                                                                 </div>
                                                             </div>
-
+                                                            @if ($errors->has('file'))
+                                                                <span class="help-block">
+                                                                    <strong>{{ $errors->first('file') }}</strong>
+                                                                </span>
+                                                            @endif
+                                                        </div>
+                                                        {!!Form::close()!!}
                                                             <hr />
 
                                                             
@@ -153,29 +168,9 @@
                                                                 </span>
                                                             @endif
                                                         </div>
-                                                        <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
-                                                            <label class="control-label">
-                                                                Password
-                                                            </label>
-                                                            <input placeholder="password" class="form-control"  name="password" id="password" type="password">
-                                                            @if ($errors->has('password'))
-                                                                <span class="help-block">
-                                                                    <strong>{{ $errors->first('password') }}</strong>
-                                                                </span>
-                                                            @endif
-                                                        </div>
+                                                       
 
-                                                        <div class="form-group {{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                                                            <label class="control-label">
-                                                                Confirm Password
-                                                            </label>
-                                                            <input placeholder="confrimation password" class="form-control"  id="password_confirmation" name="password_confirmation" type="password" >
-                                                            @if ($errors->has('password_confirmation'))
-                                                                <span class="help-block">
-                                                                    <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                                                </span>
-                                                            @endif
-                                                        </div>
+                                                        
                                                     
                                                         
                                                         <div class="form-group  {{ $errors->has('desc') ? ' has-error' : '' }}">
@@ -230,14 +225,7 @@
                                                                 @endif
                                                                 </div>
                                                                 <div class="fileupload-preview fileupload-exists thumbnail"></div>
-                                                                <div class="user-edit-image-buttons">
-                                                                    <span class="btn btn-azure btn-file"><span class="fileupload-new"><i class="fa fa-picture"></i> Select image</span><span class="fileupload-exists"><i class="fa fa-picture"></i> Change</span>
-                                                                        <input type="file" name="pic" id="pic" value="{{Auth::user()->pic}}">
-                                                                    </span>
-                                                                    <a href="#" class="btn fileupload-exists btn-red" data-dismiss="fileupload">
-                                                                        <i class="fa fa-times"></i> Remove
-                                                                    </a>
-                                                                </div>
+                                                               
                                                             </div>
                                                         </div>
                                                     </div>
@@ -360,7 +348,6 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Maps</div>
-
                 <div class="panel-body">
                     <div id="map"></div>
                      <script>
@@ -377,12 +364,9 @@
                 </div>
             </div>
         </div>
-
-
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Detail Daerah Irigasi</div>
-
                 <div class="panel-body">
                     <div id="map"></div>
                     <script>

@@ -129,7 +129,7 @@
 							<!-- start: USER DROPDOWN -->
 							<li class="dropdown current-user">
 								<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-									<img src="{{ asset('') }}assets-admin/images/avatar-1-small.jpg" class="img-circle" alt=""> <span class="username hidden-xs">{{ ucfirst(Auth::user()->name) }}</span> <i class="fa fa-caret-down "></i>
+									<img src="{{ asset('') }}assets/img/profile/{{Auth::user()->pic}}" class="img-circle" alt="" style="height: 35px; width:35px;"> <span class="username hidden-xs">{{ ucfirst(Auth::user()->name) }}</span> <i class="fa fa-caret-down "></i>
 								</a>
 								<ul class="dropdown-menu dropdown-dark">
 									<li>
@@ -171,11 +171,11 @@
 						</div>
 						<div class="user-profile border-top padding-horizontal-10 block">
 							<div class="inline-block">
-								<img src="{{ asset('') }}assets-admin/images/avatar-1.jpg" alt="">
+								<img src="{{ asset('') }}assets/img/profile/{{Auth::user()->pic}}" alt="" style="height: 50px; width:50px; ">
 							</div>
 							<div class="inline-block">
 								<h5 class="no-margin"> Administrator </h5>
-								<h4 class="no-margin"> {{ ucfirst(Auth::user()->name) }} </h4>
+								<h4 class="no-margin"><a href="/home"> {{ ucfirst(Auth::user()->name) }} </a></h4>
 							</div>
 						</div>
 						<!-- start: MAIN NAVIGATION MENU -->
