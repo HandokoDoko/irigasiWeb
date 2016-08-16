@@ -121,10 +121,10 @@
 												</label>
 												<div class="col-sm-5">
 													<select id="form-field-select-1" class="form-control" name="kewenangan" required="">
-												<option value="1" selected="">Pusat</option>
-												<option value="2">Provinsi</option>
-												<option value="3">Kabupaten</option>
-											</select>
+														<option value="1" selected="">Pusat</option>
+														<option value="2">Provinsi</option>
+														<option value="3">Kabupaten</option>
+													</select>
                                                         @if ($errors->has('kewenangan'))
                                                             <span class="help-block">
                                                                 <strong>{{ $errors->first('kewenangan') }}</strong>

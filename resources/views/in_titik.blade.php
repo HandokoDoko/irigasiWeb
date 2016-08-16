@@ -95,9 +95,9 @@
 				<div class="panel-body">
 					<form role="form" class="form-horizontal"  action="/simpanKoordinat" method="POST" accept-charset="UTF-8">{!! Form::open(['method' => 'post']) !!}
 			        	<div id="map"></div>
-						<input type="text" name="id" id="id" value="{{ $irigasi->id }}">
-						<input type="text" name="lat" id="lat" value="">
-						<input type="text" name="lng" id="lng" value="">
+						<input type="hidden" name="id" id="id" value="{{ $irigasi->id }}">
+						<input type="hidden" name="lat" id="lat" value="">
+						<input type="hidden" name="lng" id="lng" value="">
 						<div class="form-group">
 							<label class="col-sm-7 control-label" for="form-field-2">
 							<b>Koordinat</b>
@@ -194,18 +194,18 @@
   <script src="{{ asset('') }}assets-admin/plugins/ladda-bootstrap/dist/ladda.min.js"></script>
   <script src="{{ asset('') }}assets-admin/js/ui-buttons.js"></script>
  <script type="text/javascript">
-  /*function initMap() {
+  function initMap() {
 	var mapDiv = document.getElementById('map');
     var map = new google.maps.Map(mapDiv, {
         center: {lat: 3.397998, lng: 99.070280},
         zoom: 10
-    });*/
+    });
 /*    var marker = new google.maps.Marker({
     	position:{lat: 3.397998, lng: 99.070280},
     	map:map,
     	draggable: true
     });*/
-  //}
+ 	}
 //Variabel Latitude
     var latDrajat = document.getElementById('latDrajat');
     var latMenit = document.getElementById('latMenit');
