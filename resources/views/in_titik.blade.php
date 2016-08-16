@@ -58,7 +58,7 @@
 			<!-- start: TEXT FIELDS PANEL -->
 			<div class="panel panel-white">
 				<div class="panel-heading">
-					<h4 class="panel-title"><span class="text-bold">Data</span></h4>
+					<h4 class="panel-title"><span class="text-bold">Data {{ $irigasi->id }}</span></h4>
 					<div class="panel-tools">
 						<div class="dropdown">
 							<a data-toggle="dropdown" class="btn btn-xs dropdown-toggle btn-transparent-grey">
@@ -92,7 +92,7 @@
 				</div>
 				<div class="panel-body">
 			        <div id="map"></div>
-					<form role="form" class="form-horizontal" method="post" action="/input_data">
+					<form role="form" class="form-horizontal" method="post" action="/input_koordinat">
 						<div class="from-group">
 							<div class="col-sm-12">
 							</div>
@@ -123,6 +123,7 @@
 								</div>
 							</div>
 						</div>
+
 						<div class="form-group">
 							<div class="col-sm-7">
 							</div>
@@ -132,10 +133,20 @@
 								</div>
 							</div>
 						</div>
+
+						<div class="form-group">
+							<div class="col-sm-7">
+							</div>
+							<div class="col-sm-5">
+								<ul id="adalah" name="adalah">
+								</ul>
+							</div>
+						</div>
+
 						<br><br><br>
 						<div class="from-group">
 							<div class="col-sm-12" align="center">
-								<button data-style="expand-right" class="ladda-button" data-color="green"> Simpan <i class="fa fa-arrow-circle-right"></i>
+								<button data-style="expand-right" class="ladda-button" data-color="green"> Tambah <i class="fa fa-arrow-circle-right"></i>
 								</button>
 							</div>
 						</div>
@@ -152,7 +163,7 @@
 <script src="assets-admin/plugins/ladda-bootstrap/dist/spin.min.js"></script>
 <script src="assets-admin/plugins/ladda-bootstrap/dist/ladda.min.js"></script>
 <script src="assets-admin/js/ui-buttons.js"></script>
-<!-- <script type="text/javascript">
+ <script type="text/javascript">
   function initMap() {
 	var mapDiv = document.getElementById('map');
     var map = new google.maps.Map(mapDiv, {
@@ -177,6 +188,7 @@
     var lngMenit = document.getElementById('lngMenit');
     var lngDetik = document.getElementById('lngDetik');
     var lngDirek = document.getElementById('lngDms');
+    var list = document.getElementById('adalah');
 
 	var lat_, lng_;
 
@@ -204,14 +216,14 @@
 				position:{lat: lat_, lng: lng_},
 				map:map
 			});
-    		btnTambah.text = "Tambah";
+    		btnTambah.value = "Tambah";
 		}
 		else{
     		alert(lat_+" "+lng_);
-    		btnTambah.text = "Cek Map";
+    		btnTambah.value = "Cek Map";
 		}
     });
-</script> -->
+</script>
 
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWYOBR2vNEocvI6JG-oF1sGVPQz4gF5GQ&callback=initMap&libraries=places">
 	</script>

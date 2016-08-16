@@ -193,17 +193,17 @@
 								<ul class="sub-menu">
 									<li>
 										<a href="{{ url('/data/1') }}">
-											<span class="title"> Data Pusat </span><span class="label label-default pull-right ">{{ $no=0}}</span>
+											<span class="title"> Data Pusat </span><span class="label label-default pull-right ">{{ $no=0 }}</span>
 										</a>
 									</li>
 									<li>
 										<a href="{{ url('/data/2') }}">
-											<span class="title"> Data Provinsi </span><span class="label label-default pull-right ">210</span>
+											<span class="title"> Data Provinsi </span><span class="label label-default pull-right ">0</span>
 										</a>
 									</li>
 									<li>
 										<a href="{{ url('/data/3') }}">
-											<span class="title"> Data Kabupaten </span><span class="label label-default pull-right ">320</span>
+											<span class="title"> Data Kabupaten </span><span class="label label-default pull-right ">0</span>
 										</a>
 									</li>
 								</ul>

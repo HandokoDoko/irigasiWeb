@@ -28,9 +28,10 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function detail()
+    public function detail($id)
     {
-        return view('detail');
+        $irigasi=Irigasi::find($id);
+        return view('detail')->with('irigasi', $irigasi);
     }
 
     public function admin()
@@ -55,6 +56,11 @@ class HomeController extends Controller
 
     public function tambah_data()
     {
+        //$irigasi=Irigasi::all($id);
+     //   $id = $irigasi->id;
+       // dd($id);
+
+       // return view('editData')->with('irigasi', $irigasi);
         return view('input_data');
     }
      public function hapus($id)
@@ -93,17 +99,28 @@ class HomeController extends Controller
       $irigasi->saluranSkunder=$request->saluranSkunder;
       $irigasi->jnsSaluranSkunder=$request->jnsSaluranSkunder;
       $irigasi->debitAir=$request->debitAir;
+
       
-      if($irigasi->kewenangan=="1"){
+      if($irigasi->kewenangan=="1")
+      {
         $irigasi->save();
-        return redirect('data/1');
-    }
-      else if($irigasi->kewenangan=="2"){ 
+        //$index = $irigasi->id;
+        //dd($index);
+        return view('detail')->with('irigasi', $irigasi);
+        //return redirect('detail', ['id' => $index]);
+        //return redirect('detail', ['irigasi' => $irigasi]);
+        
+      }
+      else if($irigasi->kewenangan=="2")
+      { 
         $irigasi->save();
-        return redirect('data/2');}
-      else if($irigasi->kewenangan=='3'){
+        return redirect('data/2');
+      }
+      else if($irigasi->kewenangan=='3')
+      {
         $irigasi->save();
-       return redirect('data/3');}
+        return redirect('data/3');
+     }
       
     
   }
@@ -143,4 +160,50 @@ class HomeController extends Controller
       
     
   }
+
+
+  public function tambah_titik($id)
+  {
+
+    $irigasi=Irigasi::find($id);
+    return view('in_titik')->with('irigasi', $irigasi);
+  }
+
+  public function simpanKoordinat(Request $request)
+  {
+    $this->validate($request,[
+      'nama'=>'required',/*
+      'nip'=>'required',
+      'username'=>'required',
+      'email'=>'required',
+      'password' => 'min:6|confirmed',*/
+      //'password' => 'min:6|confirmed',
+      ]);
+    $irigasi= new Irigasi;
+    $irigasi->nama=$request->nama;
+    $irigasi->kewenangan=$request->kewenangan;
+    $irigasi->Kecamatan=$request->Kecamatan;
+    $irigasi->jlhBendung=$request->jlhBendung;
+    $irigasi->luasArea=$request->luasArea;
+    $irigasi->panjangSaluran=$request->panjangSaluran;
+    $irigasi->saluranPrimer=$request->saluranPrimer;
+    $irigasi->jnsSaluranPrimer=$request->jnsSaluranPrimer;
+    $irigasi->saluranSkunder=$request->saluranSkunder;
+    $irigasi->jnsSaluranSkunder=$request->jnsSaluranSkunder;
+    $irigasi->debitAir=$request->debitAir;
+    
+    if($irigasi->kewenangan=="1"){
+      $irigasi->save();
+      return redirect('data/1');
+  }
+    else if($irigasi->kewenangan=="2"){ 
+      $irigasi->save();
+      return redirect('data/2');}
+    else if($irigasi->kewenangan=='3'){
+      $irigasi->save();
+     return redirect('data/3');}
+    
+  
+}
+
 }

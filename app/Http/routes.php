@@ -19,10 +19,11 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/detail', 'HomeController@detail');
+Route::get('/detail/view/{id}', 'HomeController@detail');
 Route::get('/admin', 'HomeController@admin');
 Route::get('/data/{id}', 'HomeController@data_provinsi')->where('id', '[1-3]+');
 Route::get('/tambah_data', 'HomeController@tambah_data');
+Route::get('/tambah_titik/koordinat/{id}', 'HomeController@tambah_titik');
 
 Route::delete('/data/remove/{id}', 'HomeController@hapus');
 Route::get('/data/{id}/edit', 'HomeController@edit');
@@ -32,3 +33,4 @@ Route::put('/profile/{id}', 'ProfileController@update');
 Route::put('/simpanDi', 'HomeController@simpanDi');
 Route::put('apply/upload', 'ProfileController@uploadImg');
 Route::resource('irigasi', 'IrigasiController');
+Route::put('/simpanKoordinat', 'HomeController@simpanKoordinat');
