@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Irigasi;
+use App\Koordinat;
 
 class HomeController extends Controller
 {
@@ -179,30 +180,16 @@ class HomeController extends Controller
       'password' => 'min:6|confirmed',*/
       //'password' => 'min:6|confirmed',
       ]);
-    $irigasi= new Irigasi;
-    $irigasi->nama=$request->nama;
-    $irigasi->kewenangan=$request->kewenangan;
-    $irigasi->Kecamatan=$request->Kecamatan;
-    $irigasi->jlhBendung=$request->jlhBendung;
-    $irigasi->luasArea=$request->luasArea;
-    $irigasi->panjangSaluran=$request->panjangSaluran;
-    $irigasi->saluranPrimer=$request->saluranPrimer;
-    $irigasi->jnsSaluranPrimer=$request->jnsSaluranPrimer;
-    $irigasi->saluranSkunder=$request->saluranSkunder;
-    $irigasi->jnsSaluranSkunder=$request->jnsSaluranSkunder;
-    $irigasi->debitAir=$request->debitAir;
+    $koor= new Koordinat;
+    $koor->idIrigasi=$request->id;
+    $koor->nama=$request->nama;
+    $koor->lat=$request->lat;
+    $koor->lng=$request->lng;
+    $koor->desc=$request->des;
     
-    if($irigasi->kewenangan=="1"){
-      $irigasi->save();
-      return redirect('data/1');
-  }
-    else if($irigasi->kewenangan=="2"){ 
-      $irigasi->save();
-      return redirect('data/2');}
-    else if($irigasi->kewenangan=='3'){
-      $irigasi->save();
-     return redirect('data/3');}
-    
+    $koor->save();
+
+    return redirect('data/1');
   
 }
 

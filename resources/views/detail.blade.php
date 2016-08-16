@@ -15,7 +15,7 @@
 
                 <div class="panel-body">
                     <div id="map"></div>
-                     <!-- <script>
+                      <script>
                       function initMap() {
                         var mapDiv = document.getElementById('map');
 
@@ -53,7 +53,7 @@
                           })(marker, i));
                         }
                       }
-                    </script> -->
+                    </script>
                     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWYOBR2vNEocvI6JG-oF1sGVPQz4gF5GQ&callback=initMap">
                     </script>
                 </div>
@@ -88,7 +88,7 @@
                   </div>
                   <div class="panel-body">
                     <p>
-                      <a class="btn btn-primary" href="/tambah_titik/koordinat/{{ $irigasi->id}}"><i class="fa fa-plus"></i> Add Coordinates</a>
+                      <a class="btn btn-primary" href="/tambah_titik/{{ $irigasi->id}}"><i class="fa fa-plus"></i> Add Coordinates</a>
                     </p>
                     <div class="table-responsive">
                       <table class="table table-bordered table-hover" id="sample-table-1">

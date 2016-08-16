@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('css')
+		<meta name="csrf-token" content="{{ csrf_token() }}" />
 		<link rel="stylesheet" href="assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css">
 		<link rel="stylesheet" href="assets/plugins/select2/select2.css">
 		<link rel="stylesheet" href="assets/plugins/datepicker/css/datepicker.css">
@@ -23,6 +24,7 @@
 
 @section('content')
 <div class="container">
+
 	<!-- start: PAGE HEADER -->
 	<!-- start: TOOLBAR -->
 	<div class="toolbar row">
@@ -91,11 +93,15 @@
 					</div>
 				</div>
 				<div class="panel-body">
-			        <div id="map"></div>
-					<form role="form" class="form-horizontal" method="post" action="/input_koordinat">
-						<div class="from-group">
-							<div class="col-sm-12">
-							</div>
+					<form role="form" class="form-horizontal"  action="/simpanKoordinat" method="POST" accept-charset="UTF-8">{!! Form::open(['method' => 'post']) !!}
+			        	<div id="map"></div>
+						<input type="text" name="id" id="id" value="{{ $irigasi->id }}">
+						<input type="text" name="lat" id="lat" value="">
+						<input type="text" name="lng" id="lng" value="">
+						<div class="form-group">
+							<label class="col-sm-7 control-label" for="form-field-2">
+							<b>Koordinat</b>
+							</label>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-5 control-label" for="form-field-2">
@@ -124,6 +130,29 @@
 							</div>
 						</div>
 
+
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="form-field-2">
+							<b>Nama</b>
+							</label>
+							<div class="col-sm-7">
+								<div class="input-group">
+									<input type="text" name="nama" id="nama" class="form-input">
+								</div>
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="form-field-2">
+							<b>Deskripsi</b>
+							</label>
+							<div class="col-sm-7">
+								<div class="input-group">
+									<textarea name="des" id="des" class="form-input"></textarea>
+								</div>
+							</div>
+						</div>
 						<div class="form-group">
 							<div class="col-sm-7">
 							</div>
@@ -143,14 +172,15 @@
 							</div>
 						</div>
 
-						<br><br><br>
 						<div class="from-group">
 							<div class="col-sm-12" align="center">
 								<button data-style="expand-right" class="ladda-button" data-color="green"> Tambah <i class="fa fa-arrow-circle-right"></i>
 								</button>
 							</div>
 						</div>
+						{{ Form::close() }}
 					</form>
+					</div>
 				</div>
 			</div>
 			<!-- end: TEXT FIELDS PANEL -->
@@ -160,22 +190,22 @@
 @endsection
 
 @section('js')
-<script src="assets-admin/plugins/ladda-bootstrap/dist/spin.min.js"></script>
-<script src="assets-admin/plugins/ladda-bootstrap/dist/ladda.min.js"></script>
-<script src="assets-admin/js/ui-buttons.js"></script>
+  <script src="{{ asset('') }}assets-admin/plugins/ladda-bootstrap/dist/spin.min.js"></script>
+  <script src="{{ asset('') }}assets-admin/plugins/ladda-bootstrap/dist/ladda.min.js"></script>
+  <script src="{{ asset('') }}assets-admin/js/ui-buttons.js"></script>
  <script type="text/javascript">
-  function initMap() {
+  /*function initMap() {
 	var mapDiv = document.getElementById('map');
     var map = new google.maps.Map(mapDiv, {
         center: {lat: 3.397998, lng: 99.070280},
         zoom: 10
-    });
-    var marker = new google.maps.Marker({
+    });*/
+/*    var marker = new google.maps.Marker({
     	position:{lat: 3.397998, lng: 99.070280},
     	map:map,
     	draggable: true
-    });
-  }
+    });*/
+  //}
 //Variabel Latitude
     var latDrajat = document.getElementById('latDrajat');
     var latMenit = document.getElementById('latMenit');
@@ -191,6 +221,10 @@
     var list = document.getElementById('adalah');
 
 	var lat_, lng_;
+
+
+    var inLat = document.getElementById('lat');
+    var inLng = document.getElementById('lng');
 
 	var mapDiv = document.getElementById('map');
 /*    var milDet = 3600;
@@ -216,6 +250,9 @@
 				position:{lat: lat_, lng: lng_},
 				map:map
 			});
+
+			inLat.value = lat_;
+			inLng.value = lng_;
     		btnTambah.value = "Tambah";
 		}
 		else{
