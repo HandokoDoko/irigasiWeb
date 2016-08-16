@@ -11,7 +11,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Map</div>
+                <div class="panel-heading">Map
+            </div>
 
                 <div class="panel-body">
                     <div id="map"></div>
@@ -92,28 +93,25 @@
                     </p>
                     <div class="table-responsive">
                       <table class="table table-bordered table-hover" id="sample-table-1">
-                        <tr>
-                          <td>Nama Pengambilan</td>
-                          <td>{{ $irigasi->nama }}</td>
-                        </tr>
-                        <tr>
-                          <td>Kewenangan</td>
-                          <td>{{ $irigasi->kewenangan }}</td>
-                        </tr>
-                        <tr>
-                          <td>Kecamatan</td>
-                          @if($irigasi->Kecamatan==1)
-                            <td>Pusat</td>
-                          @elseif($irigasi->Kecamatan==2)
-                            <td>Provinsi</td>
-                          @elseif($irigasi->Kecamatan==3)
-                            <td>Kecamatan</td>
-                          @endif
-                        </tr>
-                        <tr>
-                          <td>Jumlah Bendungan</td>
-                          <td>{{ $irigasi->jlhBendung }}</td>
-                        </tr>
+
+                        <thead>
+                          <tr>
+                            <th>Nama Pengambilan</th>
+                            <th>Deskripsi</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($koor as $dts)
+                          <tr>
+                            <td>{{ $dts->nama }}</td>
+                            <td>{{ $dts->desc }}</td>
+                            <td>{{ $dts->lat }}</td>
+                            <td>{{ $dts->lng }}</td>
+                          </tr>
+                        @endforeach
+                        </tbody>
                       </table>
                     </div>
                   </div>

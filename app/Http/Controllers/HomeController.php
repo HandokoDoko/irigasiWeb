@@ -32,7 +32,9 @@ class HomeController extends Controller
     public function detail($id)
     {
         $irigasi=Irigasi::find($id);
-        return view('detail')->with('irigasi', $irigasi);
+        $koor = Koordinat::where('idIrigasi',"=",$id)->get();
+        //dd($koor);
+        return view('detail')->with(['irigasi'=>$irigasi, 'koor'=>$koor]);
     }
 
     public function admin()
