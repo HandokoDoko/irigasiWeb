@@ -248,10 +248,10 @@
                             <!-- start: USER DROPDOWN -->
                             <li class="dropdown current-user">
                                 <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-                                @if(Auth::user()->pic==null)
+                                @if(Auth::user()->pic=="")
                                     <img src="{{ asset('') }}assets/img/profile/anonymous.jpg" alt=""class="img-circle" alt="" style="height: 40px; width:40px; "> <span class="username hidden-xs">{{ ucfirst(Auth::user()->name) }} </span> <i class="fa fa-caret-down "></i>
                                 @endif
-                                @if(Auth::user()->pic!=null)
+                                @if(Auth::user()->pic!="")
                                     <img src="{{ asset('') }}assets/img/profile/{{ Auth::user()->pic }}" alt="" class="img-circle" alt="" style="height: 40px; width:40px; "> <span class="username hidden-xs">{{ ucfirst(Auth::user()->name) }} </span> <i class="fa fa-caret-down "></i>
                                 @endif
                                 </a>
