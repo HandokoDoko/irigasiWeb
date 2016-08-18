@@ -62,14 +62,20 @@
                           </tr>
                         </thead>
                         <tbody>
-                        @foreach($koor as $dts)
-                          <tr>   
-                            <td>{{ $dts->nama }}</td>
-                            <td>{{ $dts->desc }}</td>
-                            <td>{{ $dts->lat }}</td>
-                            <td>{{ $dts->lng }}</td>
+                        @if($koor != NULL)
+                          @foreach($koor as $dts)
+                            <tr>   
+                              <td>{{ $dts->nama }}</td>
+                              <td>{{ $dts->desc }}</td>
+                              <td>{{ $dts->lat }}</td>
+                              <td>{{ $dts->lng }}</td>
+                            </tr>
+                          @endforeach
+                        @else
+                          <tr>
+                            <td>Data Koordinat Belum Di Input</td>
                           </tr>
-                        @endforeach
+                        @endif
                         </tbody>
                       </table>
                     </div>
@@ -202,8 +208,8 @@
                           console.log(locations);*/
 
                           var map = new google.maps.Map(mapDiv, {
-                            zoom: 5,
-                            center: new google.maps.LatLng(data[0].lat, data[1].lng),
+                            zoom: 13,
+                            center: new google.maps.LatLng(data[0].lat, data[0].lng),
                             mapTypeId: google.maps.MapTypeId.ROADMAP
                           });
 
@@ -232,7 +238,12 @@
                         }
                         else
                         {
-                          alert("Data Tidak Ada");
+
+                          var map = new google.maps.Map(mapDiv, {
+                            zoom: 5,
+                            center: new google.maps.LatLng(data[0].lat, data[0].lng),
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                          });
                         }
 
   /*                      var marker, i;
