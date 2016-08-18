@@ -93,9 +93,10 @@
 									<form action="/data/remove/{{ $data->id}}" method="post">
                                         <input type="hidden" class="form-control" id="token" name="_token" value="{{ csrf_token() }}">
                                         <input type="hidden" name="_method" value="delete">
-                                        <a class="btn btn-blue" href="/detail/view/{{ $data->id}}"><i class="fa fa-pencil"></i></a>
-                                        <a class="btn btn-red" href="#" onclick="$(this).closest('form').submit()"><i class="fa fa-times fa fa-white" width="10"></i></a>
+                                        <a class="btn btn-blue" href="/detail/view/{{ $data->id}}"><i class="fa fa-share"></i></a>
                                         <a class="btn btn-blue" href="/data/{{ $data->id}}/edit"><i class="fa fa-pencil"></i></a>
+                                        <a class="btn btn-red" href="#" onclick="$(this).closest('form').submit()"><i class="fa fa-times fa fa-white" width="10"></i></a>
+                                        
                                     </form>
 								</td>
 								
