@@ -110,6 +110,20 @@ class HomeController extends Controller
       $irigasi->jnsSaluranSkunder=$request->jnsSaluranSkunder;
       $irigasi->debitAir=$request->debitAir;
 
+      if (Input::file('skemaJaringan')->isValid() and Input::file('petaSituasi')->isValid()) {
+        $destinationPath = '../public/assets/file'; 
+
+        $extension1 = Input::file('skemaJaringan')->getClientOriginalExtension(); 
+        $fileName1 = rand(11111,99999).'-' .Input::file('skemaJaringan')->getClientOriginalName().'.'.$extension1; 
+
+        $extension2 = Input::file('petaSituasi')->getClientOriginalExtension(); 
+        $fileName2 = rand(11111,99999).'-'.Input::file('petaSituasi')->getClientOriginalName().'.'.$extension2; 
+    
+        Input::file('skemaJaringan')->move($destinationPath, $fileName1); 
+        Input::file('petaSituasi')->move($destinationPath, $fileName2); 
+        $irigasi->skemaJaringan=$fileName1;
+        $irigasi->petaSituasi=$fileName2;
+      }
 
       if (Input::file('skemaJaringan')->isValid() and Input::file('petaSituasi')->isValid()) {
         $destinationPath = '../public/assets/file'; 
@@ -213,6 +227,6 @@ class HomeController extends Controller
 
     return redirect('data/1');
   
-}
+  }
 
 }
