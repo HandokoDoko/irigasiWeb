@@ -71,7 +71,7 @@
                               <td>{{ $dts->lng }}</td>
                             </tr>
                           @endforeach
-                        @else
+                        @elseif($koor != NULL)
                           <tr>
                             <td>Data Koordinat Belum Di Input</td>
                           </tr>
@@ -115,22 +115,22 @@
                     <div class="table-responsive">
                       <table class="table table-bordered table-hover" id="sample-table-1">
                         <tr>
+                          <td>Kewenangan</td>
+                          @if($irigasi->kewenangan==1)
+                            <td>Pusat</td>
+                          @elseif($irigasi->kewenangan==2)
+                            <td>Provinsi</td>
+                          @elseif($irigasi->kewenangan==3)
+                            <td>Kecamatan</td>
+                          @endif
+                        </tr>
+                        <tr>
                           <td>Nama Pengambilan</td>
                           <td>{{ $irigasi->nama }}</td>
                         </tr>
                         <tr>
-                          <td>Kewenangan</td>
-                          <td>{{ $irigasi->kewenangan }}</td>
-                        </tr>
-                        <tr>
                           <td>Kecamatan</td>
-                          @if($irigasi->Kecamatan==1)
-                            <td>Pusat</td>
-                          @elseif($irigasi->Kecamatan==2)
-                            <td>Provinsi</td>
-                          @elseif($irigasi->Kecamatan==3)
-                            <td>Kecamatan</td>
-                          @endif
+                          <td>{{ $irigasi->Kecamatan }}</td>
                         </tr>
                         <tr>
                           <td>Jumlah Bendungan</td>
@@ -181,19 +181,46 @@
 
 @section('mainjs')
                       <script>
+                      var data = [];
+                      var tabel = document.getElementById("tblData");
+                      var dmsLat = [];
+                      var dmsLng = [];
+
                       function initMap() {
                         var mapDiv = document.getElementById('map');
-                        var tabel = document.getElementById("tblData");
-                        var data = [];
                         for (var i = 1; i < tabel.rows.length; i++) {
                           data.push({
                             nama:tabel.rows[i].cells[i-1].textContent,
                             deskripsi:tabel.rows[i].cells[1].textContent,
                             lat:tabel.rows[i].cells[2].textContent,
-                            lng:tabel.rows[i].cells[3].textContent,
-
+                            lng:tabel.rows[i].cells[3].textContent
                           });
                         }
+
+
+                        for(var i=0; i<data.length; i++)
+                        {
+                          var detLat = Math.abs((Math.abs(data[i].lat) - Math.floor(Math.abs(data[i].lat)) - (Math.floor((Math.abs(data[i].lat) - Math.floor(Math.abs(data[i].lat)))*60)/60))*3600).toFixed(2);
+                          var detLng = Math.abs((Math.abs(data[i].lng) - Math.floor(Math.abs(data[i].lng)) - (Math.floor((Math.abs(data[i].lng) - Math.floor(Math.abs(data[i].lng)))*60)/60))*3600).toFixed(2);
+
+                            dmsLat.push({
+                              deg: Math.floor(Math.abs(data[i].lat)),
+                              min: Math.floor((Math.abs(data[i].lat) - Math.floor(Math.abs(data[i].lat)))*60),
+                              sec: detLat,
+                              cardinal: ((data[i].lat>0)? "N" : "S")
+                            });
+
+                            dmsLng.push({
+                              deg: Math.floor(Math.abs(data[i].lng)),
+                              min: Math.floor((Math.abs(data[i].lng) - Math.floor(Math.abs(data[i].lng)))*60),
+                              sec: detLng,
+                              cardinal: ((data[i].lng>0)? "E" : "W")
+                            });
+
+                            tabel.rows[i+1].cells[2].textContent = dmsLat[i].deg+"°"+ dmsLat[i].min+"'"+dmsLat[i].sec+" "+dmsLat[i].cardinal;
+                            tabel.rows[i+1].cells[3].textContent = dmsLng[i].deg+"°"+ dmsLng[i].min+"'"+dmsLng[i].sec+" "+dmsLng[i].cardinal;
+                        }
+                        console.log(dmsLat, dmsLng);
 
                         if(data.length != 0){
 
@@ -210,16 +237,14 @@
                           var map = new google.maps.Map(mapDiv, {
                             zoom: 13,
                             center: new google.maps.LatLng(data[0].lat, data[0].lng),
-                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                            //mapTypeId: google.maps.MapTypeId.ROADMAP
                           });
 
                           var infowindow = new google.maps.InfoWindow();
                           
                           var marker, i;
 
-                          for (i = 0; i < data.length; i++) {  
-                            console.log(data[i].lat);
-                            console.log(data[i].lng);
+                          for (i = 0; i < data.length; i++) {
                             marker = new google.maps.Marker({
                               position: new google.maps.LatLng(data[i].lat, data[i].lng),
                               map: map,
@@ -240,9 +265,9 @@
                         {
 
                           var map = new google.maps.Map(mapDiv, {
-                            zoom: 5,
-                            center: new google.maps.LatLng(data[0].lat, data[0].lng),
-                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                            zoom: 12,
+                            center: new google.maps.LatLng(3.350016, 99.103238),
+                            //mapTypeId: google.maps.MapTypeId.ROADMAP
                           });
                         }
 

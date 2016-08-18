@@ -6,6 +6,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Irigasi;
 use App\Koordinat;
+use Illuminate\Support\Facades\Redirect;
 
 class HomeController extends Controller
 {
@@ -105,31 +106,29 @@ class HomeController extends Controller
 
       
       //$irigasi=Irigasi::find($id);
-      $idn = 119;
+      $id = 109;
 
+      $irigasi->save();
       if($irigasi->kewenangan=="1")
       {
-        $irigasi->save();
         //$index = $irigasi->id;
         //dd($index);
         //dd($koor);
         //return view('detail/view/109');
-        return redirect('detail/view/{id}',['id'=>$idn]);
-        //return redirect('detail', ['id' => $index]);
+        //return Redirect::route('detail/view/109');
+        return redirect('data/1');
         //return redirect('detail', ['irigasi' => $irigasi]);
         
       }
       else if($irigasi->kewenangan=="2")
       { 
-        $irigasi->save();
-        //return redirect('data/2');
-        return redirect('detail/view/{id}',['id'=>$idn]);
+        return redirect('data/2');
+        //return redirect('detail/view', compact($idn));
       }
       else if($irigasi->kewenangan=='3')
       {
-        $irigasi->save();
-        //return redirect('data/3');
-        return redirect('detail/view/{id}',['id'=>$idn]);
+        return redirect('data/3');
+        //return redirect('detail/view', compact($idn));
      }
       
     
