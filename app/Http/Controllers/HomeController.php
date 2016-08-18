@@ -6,6 +6,8 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Irigasi;
 use App\Koordinat;
+use Illuminate\Support\Facades\Input;
+use File;
 
 class HomeController extends Controller
 {
@@ -88,10 +90,10 @@ class HomeController extends Controller
     public function simpanDi(Request $request)
     {
       $this->validate($request,[
-        'nama'=>'required',/*
-        'nip'=>'required',
-        'username'=>'required',
-        'email'=>'required',
+        'nama'=>'required',
+        'kewenangan'=>'required',
+        'Kecamatan'=>'required',
+        /*'email'=>'required',
         'password' => 'min:6|confirmed',*/
         //'password' => 'min:6|confirmed',
         ]);
@@ -108,37 +110,28 @@ class HomeController extends Controller
       $irigasi->jnsSaluranSkunder=$request->jnsSaluranSkunder;
       $irigasi->debitAir=$request->debitAir;
 
-      
-      //$irigasi=Irigasi::find($id);
-      $idn = 119;
 
-      if($irigasi->kewenangan=="1")
-      {
-        $irigasi->save();
-        //$index = $irigasi->id;
-        //dd($index);
-        //dd($koor);
-        //return view('detail/view/109');
-        return redirect('detail/view/{id}',['id'=>$idn]);
-        //return redirect('detail', ['id' => $index]);
-        //return redirect('detail', ['irigasi' => $irigasi]);
-        
-      }
-      else if($irigasi->kewenangan=="2")
-      { 
-        $irigasi->save();
-        //return redirect('data/2');
-        return redirect('detail/view/{id}',['id'=>$idn]);
-      }
-      else if($irigasi->kewenangan=='3')
-      {
-        $irigasi->save();
-        //return redirect('data/3');
-        return redirect('detail/view/{id}',['id'=>$idn]);
-     }
-      
+      if (Input::file('skemaJaringan')->isValid() and Input::file('petaSituasi')->isValid()) {
+        $destinationPath = '../public/assets/file'; 
+
+        $extension1 = Input::file('skemaJaringan')->getClientOriginalExtension(); 
+        $fileName1 = rand(11111,99999).'-' .Input::file('skemaJaringan')->getClientOriginalName().'.'.$extension1; 
+
+        $extension2 = Input::file('petaSituasi')->getClientOriginalExtension(); 
+        $fileName2 = rand(11111,99999).'-'.Input::file('petaSituasi')->getClientOriginalName().'.'.$extension2; 
     
-  }
+        Input::file('skemaJaringan')->move($destinationPath, $fileName1); 
+        Input::file('petaSituasi')->move($destinationPath, $fileName2); 
+        $irigasi->skemaJaringan=$fileName1;
+        $irigasi->petaSituasi=$fileName2;
+      }
+      //$irigasi=Irigasi::find($id);
+      
+      
+        $irigasi->save();
+        $idn = $irigasi->id;
+        return redirect("detail/view/".$idn);
+     }
   public function editDi(Request $request,$id)
     {
       $this->validate($request,[
@@ -161,6 +154,21 @@ class HomeController extends Controller
       $irigasi->saluranSkunder=$request->saluranSkunder;
       $irigasi->jnsSaluranSkunder=$request->jnsSaluranSkunder;
       $irigasi->debitAir=$request->debitAir;
+      $destinationPath = '../public/assets/file'; 
+      if (Input::hasFile('skemaJaringan')) {
+        $extension1 = Input::file('skemaJaringan')->getClientOriginalExtension(); 
+        $fileName1 = rand(11111,99999).'-' .Input::file('skemaJaringan')->getClientOriginalName().'.'.$extension1; 
+        File::delete('../public/assets/file/' . $irigasi->skemaJaringan);
+         Input::file('skemaJaringan')->move($destinationPath, $fileName1); 
+        $irigasi->skemaJaringan=$fileName1;
+      }
+      if (Input::hasFile('petaSituasi')) {
+        $extension2 = Input::file('petaSituasi')->getClientOriginalExtension(); 
+        $fileName2 = rand(11111,99999).'-' .Input::file('petaSituasi')->getClientOriginalName().'.'.$extension2; 
+        File::delete('../public/assets/file/' . $irigasi->petaSituasi);
+        Input::file('petaSituasi')->move($destinationPath, $fileName2); 
+        $irigasi->petaSituasi=$fileName2;
+      }
       
       if($irigasi->kewenangan=="1"){
         $irigasi->save();

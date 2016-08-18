@@ -59,7 +59,7 @@ class ProfileController extends Controller
     if (Input::file('file')->isValid()) {
       $destinationPath = '../public/assets/img/profile'; 
       $extension = Input::file('file')->getClientOriginalExtension(); 
-      $fileName = rand(11111,99999).'.'.$extension; 
+      $fileName = rand(11111,99999).'-'.Input::file('file')->getClientOriginalName().'.'.$extension; 
       
       if($user->pic==""){
         Input::file('file')->move($destinationPath, $fileName); 
