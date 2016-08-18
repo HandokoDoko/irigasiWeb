@@ -39,10 +39,15 @@ class HomeController extends Controller
 
     public function admin()
     {
-        return view('admin');
+      $jlhPusat=Irigasi::where("kewenangan",'=',1)->count();
+      $jlhProv=Irigasi::where("kewenangan",'=',2)->count();
+      $jlhKab=Irigasi::where("kewenangan",'=',3)->count();
+      
+        return view('admin')->with(['jlhProv'=>$jlhProv,'jlhPusat'=>$jlhPusat,'jlhKab'=>$jlhKab]);
     }
     public function edit($id)
     {
+      
         $irigasi=Irigasi::find($id);
        // dd($irigasi);
 
@@ -51,10 +56,10 @@ class HomeController extends Controller
 
     public function data_provinsi($id)
     {
-        $irigasi=Irigasi::all();
-       // dd($irigasi);
-
-        return view('data_prov')->with('irigasi', $irigasi);
+        $irgs=Irigasi::where("kewenangan",'=',$id)->get();
+        
+       //dd($jlh);
+         return view('data_prov')->with('irgs', $irgs);
     }
 
     public function tambah_data()

@@ -84,7 +84,8 @@
 						</thead>
 						<tbody>
 						{{ $no=0 }}
-						@foreach($irigasi as $key => $data)
+						@if($irgs!="")
+						@foreach($irgs as $key => $data)
 							<tr>
 								<td>{{ $no+=1 }}</td>
 								<td class="hidden-xs">{{ $data->nama }}</td>
@@ -137,9 +138,11 @@
 									</div>
 								</div>
 								</td> -->
+							
 							</tr>
 						</tbody>
 						@endforeach
+							@endif
 					</table>
 				</div>
 			</div>

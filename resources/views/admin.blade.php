@@ -127,14 +127,14 @@
                                         </div>
                                         <div class="padding-20 core-content">
                                             <h3 class="title block no-margin">Total Data Pusat</h3>
-                                            <h1>100</h1>
+                                            <h1>0</h1>
                                         </div>
                                     </div>
                                     <div class="panel-footer clearfix no-padding">
                                         <div class=""></div>
                                         <a href="#" class="col-xs-4 padding-10 text-center text-white tooltips partition-green" data-toggle="tooltip" data-placement="top" title="More Options"><i class="fa fa-cog"></i></a>
                                         <a href="#" class="col-xs-4 padding-10 text-center text-white tooltips partition-blue" data-toggle="tooltip" data-placement="top" title="Add Content"><i class="fa fa-plus"></i></a>
-                                        <a href="{{ url('/data_provinsi') }}" class="col-xs-4 padding-10 text-center text-white tooltips partition-red" data-toggle="tooltip" data-placement="top" title="View More"><i class="fa fa-chevron-right"></i></a>
+                                        <a href="{{ url('/data/1') }}" class="col-xs-4 padding-10 text-center text-white tooltips partition-red" data-toggle="tooltip" data-placement="top" title="View More"><i class="fa fa-chevron-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -151,13 +151,13 @@
                                         </div>
                                         <div class="padding-20 core-content">
                                             <h3 class="title block no-margin">Total Data Provinsi</h3>
-                                            <h1>210</h1>
+                                            <h1>0</h1>
                                         </div>
                                     </div>
                                     <div class="panel-footer clearfix no-padding">
                                         <a href="#" class="col-xs-4 padding-10 text-center text-white tooltips partition-green" data-toggle="tooltip" data-placement="top" title="More Options"><i class="fa fa-cog"></i></a>
                                         <a href="#" class="col-xs-4 padding-10 text-center text-white tooltips partition-blue" data-toggle="tooltip" data-placement="top" title="Add Content"><i class="fa fa-plus"></i></a>
-                                        <a href="#" class="col-xs-4 padding-10 text-center text-white tooltips partition-red" data-toggle="tooltip" data-placement="top" title="View More"><i class="fa fa-chevron-right"></i></a>
+                                        <a href="{{ url('/data/2') }}" class="col-xs-4 padding-10 text-center text-white tooltips partition-red" data-toggle="tooltip" data-placement="top" title="View More"><i class="fa fa-chevron-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -174,13 +174,13 @@
                                         </div>
                                         <div class="padding-20 core-content">
                                             <h3 class="title block no-margin">Total Data Kebupaten</h3>
-                                            <h1>320</h1>
+                                            <h1>0</h1>
                                         </div>
                                     </div>
                                     <div class="panel-footer clearfix no-padding">
                                         <a href="#" class="col-xs-4 padding-10 text-center text-white tooltips partition-green" data-toggle="tooltip" data-placement="top" title="More Options"><i class="fa fa-cog"></i></a>
                                         <a href="#" class="col-xs-4 padding-10 text-center text-white tooltips partition-blue" data-toggle="tooltip" data-placement="top" title="Add Content"><i class="fa fa-plus"></i></a>
-                                        <a href="#" class="col-xs-4 padding-10 text-center text-white tooltips partition-red" data-toggle="tooltip" data-placement="top" title="View More"><i class="fa fa-chevron-right"></i></a>
+                                        <a href="{{ url('/data/3') }}" class="col-xs-4 padding-10 text-center text-white tooltips partition-red" data-toggle="tooltip" data-placement="top" title="View More"><i class="fa fa-chevron-right"></i></a>
                                     </div>
                                 </div>
                             </div>
