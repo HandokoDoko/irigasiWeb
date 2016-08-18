@@ -129,7 +129,12 @@
 							<!-- start: USER DROPDOWN -->
 							<li class="dropdown current-user">
 								<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
+								@if(Auth::user()->pic!="")
 									<img src="{{ asset('') }}assets/img/profile/{{Auth::user()->pic}}" class="img-circle" alt="" style="height: 35px; width:35px;"> <span class="username hidden-xs">{{ ucfirst(Auth::user()->name) }}</span> <i class="fa fa-caret-down "></i>
+								@endif
+								@if(Auth::user()->pic=="")
+									<img src="{{ asset('') }}assets/img/profile/anonymous.jpg" class="img-circle" alt="" style="height: 35px; width:35px;"> <span class="username hidden-xs">{{ ucfirst(Auth::user()->name) }}</span> <i class="fa fa-caret-down "></i>
+								@endif
 								</a>
 								<ul class="dropdown-menu dropdown-dark">
 									<li>
@@ -176,7 +181,13 @@
 						</div>
 						<div class="user-profile border-top padding-horizontal-10 block">
 							<div class="inline-block">
-								<img src="{{ asset('') }}assets/img/profile/{{Auth::user()->pic}}" alt="" style="height: 50px; width:50px; ">
+								@if(Auth::user()->pic!="")
+									<img src="{{ asset('') }}assets/img/profile/{{Auth::user()->pic}}" alt="" style="height: 50px; width:50px; ">
+								@endif
+								@if(Auth::user()->pic=="")
+									<img src="{{ asset('') }}assets/img/profile/anonymous.jpg" alt="" style="height: 50px; width:50px; ">
+								@endif
+								
 							</div>
 							<div class="inline-block">
 								<h5 class="no-margin"> Administrator </h5>
