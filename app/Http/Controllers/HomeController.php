@@ -104,12 +104,17 @@ class HomeController extends Controller
       $irigasi->debitAir=$request->debitAir;
 
       
+      //$irigasi=Irigasi::find($id);
+      $idn = 119;
+
       if($irigasi->kewenangan=="1")
       {
         $irigasi->save();
         //$index = $irigasi->id;
         //dd($index);
-        return view('detail')->with('irigasi', $irigasi);
+        //dd($koor);
+        //return view('detail/view/109');
+        return redirect('detail/view/{id}',['id'=>$idn]);
         //return redirect('detail', ['id' => $index]);
         //return redirect('detail', ['irigasi' => $irigasi]);
         
@@ -117,12 +122,14 @@ class HomeController extends Controller
       else if($irigasi->kewenangan=="2")
       { 
         $irigasi->save();
-        return redirect('data/2');
+        //return redirect('data/2');
+        return redirect('detail/view/{id}',['id'=>$idn]);
       }
       else if($irigasi->kewenangan=='3')
       {
         $irigasi->save();
-        return redirect('data/3');
+        //return redirect('data/3');
+        return redirect('detail/view/{id}',['id'=>$idn]);
      }
       
     
