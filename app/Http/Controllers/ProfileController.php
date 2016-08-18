@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Input;
 use Validator;
 use Redirect;
 use Session;
+use File;
 
 class ProfileController extends Controller
 {
@@ -45,34 +46,35 @@ class ProfileController extends Controller
  
   public function uploadImg(Request $request) {
      $this->validate($request,[
-        'file'=>'required|max:5000',
+        'file'=>'required',
         ]);
    $user= Profile::find($request->id);
-  // getting all of the post data
   $file = array('file' => Input::file('file'));
-  // setting up rules
-  $rules = array('file' => 'required',); //mimes:jpeg,bmp,png and for max size max:10000
-  // doing the validation, passing post data, rules and the messages
+  $rules = array('file' => 'required',);
   $validator = Validator::make($file, $rules);
   if ($validator->fails()) {
-    // send back to the page with the input data and errors
     return Redirect::to('home')->withInput()->withErrors($validator);
   }
   else {
-    // checking file is valid.
     if (Input::file('file')->isValid()) {
-      $destinationPath = '../public/assets/img/profile'; // upload path
-      $extension = Input::file('file')->getClientOriginalExtension(); // getting image extension
-      $fileName = rand(11111,99999).'.'.$extension; // renameing image
-      Input::file('file')->move($destinationPath, $fileName); // uploading file to given path
-      // sending back with message
-      $user->pic=$fileName;
-      $user->save();
+      $destinationPath = '../public/assets/img/profile'; 
+      $extension = Input::file('file')->getClientOriginalExtension(); 
+      $fileName = rand(11111,99999).'-'.Input::file('file')->getClientOriginalName().'.'.$extension; 
+      
+      if($user->pic==""){
+        Input::file('file')->move($destinationPath, $fileName); 
+        $user->pic=$fileName;
+        $user->save();
+      }else{
+        File::delete('../public/assets/img/profile/' . $user->pic);
+        Input::file('file')->move($destinationPath, $fileName); 
+        $user->pic=$fileName;
+        $user->save();
+      }
       Session::flash('success', 'Upload successfully'); 
       return Redirect::to('home');
     }
     else {
-      // sending back with error message.
       Session::flash('error', 'uploaded file is not valid');
       return Redirect::to('home');
     }

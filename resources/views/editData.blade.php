@@ -87,7 +87,8 @@
 										</div>
 									</div>
 									<div class="panel-body">
-										<form role="form" class="form-horizontal" action="/editDi/{{$irigasi->id}}" method="post">
+										<!-- <form role="form" class="form-horizontal" action="/editDi/{{$irigasi->id}}" method="post"> -->
+										{!!Form::open(array('url'=>'/editDi/'.$irigasi->id,'method'=>'POST','id'=>'frmFile','files'=>true,'class'=>'form-horizontal'))!!}
 											<div class="form-group">
 												<label class="col-sm-2 control-label" for="form-field-1">
 													Nama Pengambilan
@@ -238,6 +239,66 @@
                                                     @endif
 												</div>
 											</div>
+											<div class="form-group">
+												<label class="col-sm-2 control-label" for="form-field-2">
+													Skema Jaringan
+												</label>
+												<div class="col-sm-5">
+													<div class="fileupload fileupload-new" data-provides="fileupload"><input type="hidden">
+														<div class="input-group">
+															<div class="form-control uneditable-input">
+																<i class="fa fa-file fileupload-exists"></i>
+																<span class="fileupload-preview"></span>
+															</div>
+															<div class="input-group-btn">
+																<div class="btn btn-light-grey btn-file">
+																	<span class="fileupload-new"><i class="fa fa-folder-open-o"></i> Select file</span>
+																	<span class="fileupload-exists"><i class="fa fa-folder-open-o"></i> Change</span>
+																	<input class="file-input" type="file" name="skemaJaringan" value="{{$irigasi->skemaJaringan}}">
+																</div>
+																<a href="#" class="btn btn-light-grey fileupload-exists" data-dismiss="fileupload">
+																	<i class="fa fa-times"></i> Remove
+																</a>
+																@if ($errors->has('skemaJaringan'))
+		                                                            <span class="help-block">
+		                                                                <strong>{{ $errors->first('skemaJaringan') }}</strong>
+		                                                            </span>
+                                                    			@endif
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-2 control-label" for="form-field-2">
+													Peta Situasi
+												</label>
+												<div class="col-sm-5">
+													<div class="fileupload fileupload-new" data-provides="fileupload"><input type="hidden">
+														<div class="input-group">
+															<div class="form-control uneditable-input">
+																<i class="fa fa-file fileupload-exists"></i>
+																<span class="fileupload-preview"></span>
+															</div>
+															<div class="input-group-btn">
+																<div class="btn btn-light-grey btn-file">
+																	<span class="fileupload-new"><i class="fa fa-folder-open-o"></i> Select file</span>
+																	<span class="fileupload-exists"><i class="fa fa-folder-open-o"></i> Change</span>
+																	<input class="file-input" type="file" name="petaSituasi" value="{{$irigasi->petaSituasi}}">
+																</div>
+																<a href="#" class="btn btn-light-grey fileupload-exists" data-dismiss="fileupload">
+																	<i class="fa fa-times"></i> Remove
+																</a>
+																@if ($errors->has('petaSituasi'))
+		                                                            <span class="help-block">
+		                                                                <strong>{{ $errors->first('petaSituasi') }}</strong>
+		                                                            </span>
+                                                    			@endif
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
 										<div class="from-group">
 											 <div class="col-sm-7" align="center">
 												<button data-style="expand-right" class="ladda-button" data-color="green"> Simpan <i class="fa fa-arrow-circle-right"></i>
@@ -245,8 +306,7 @@
 											</div>
 										</div>
 											
-										</form>
-										
+										{!!Form::open()!!}
 									</div>
 								</div>
 								<!-- end: TEXT FIELDS PANEL -->

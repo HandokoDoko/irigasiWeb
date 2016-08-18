@@ -73,7 +73,7 @@
                                                                 <div class="fileupload-preview fileupload-exists thumbnail"></div>
                                                                 <div class="user-edit-image-buttons">
                                                                     <span class="btn btn-azure btn-file"><span class="fileupload-new"><i class="fa fa-picture"></i> Select image</span><span class="fileupload-exists"><i class="fa fa-picture"></i> Change</span>
-                                                                        <input type="file" name="file" id="file" value="{{Auth::user()->pic}}">
+                                                                        <input type="file" name="file" id="file" value="{{Auth::user()->pic}}" accept="image/*">
                                                                     </span>
                                                                     <a href="javascript:{}" onclick="document.getElementById('frmPic').submit();" class="btn fileupload-exists btn btn-purple">
                                                                         <i class="fa fa-times fa-arrow-circle-right"></i> Upload
