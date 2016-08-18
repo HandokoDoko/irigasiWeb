@@ -250,6 +250,7 @@
                           for (i = 0; i < data.length; i++) {
                             marker = new google.maps.Marker({
                               position: new google.maps.LatLng(data[i].lat, data[i].lng),
+                              title: data[i].nama,
                               map: map,
                             });
 
@@ -257,9 +258,8 @@
 
                             google.maps.event.addListener(marker, 'click', (function(marker, i) {
                               return function() {
-                                infowindow.setContent(locations[i][0]);
+                                infowindow.setContent("<b>"+data[i].nama+"</b><p>"+data[i].deskripsi+"</p>");
                                 infowindow.open(map, marker);
-                                alert(data);
                               }
                             })(marker, i));
                           }
