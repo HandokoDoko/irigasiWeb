@@ -59,6 +59,7 @@
                             <th>Deskripsi</th>
                             <th>Latitude</th>
                             <th>Longitude</th>
+                            <th colspan="2">Aksi</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -69,6 +70,8 @@
                               <td>{{ $dts->desc }}</td>
                               <td>{{ $dts->lat }}</td>
                               <td>{{ $dts->lng }}</td>
+                              <td><a href="">Edit</a></td>
+                              <td><a href="">Hapus</a></td>
                             </tr>
                           @endforeach
                         @elseif($koor != NULL)
@@ -217,8 +220,8 @@
                               cardinal: ((data[i].lng>0)? "E" : "W")
                             });
 
-                            tabel.rows[i+1].cells[2].textContent = dmsLat[i].deg+"°"+ dmsLat[i].min+"'"+dmsLat[i].sec+" "+dmsLat[i].cardinal;
-                            tabel.rows[i+1].cells[3].textContent = dmsLng[i].deg+"°"+ dmsLng[i].min+"'"+dmsLng[i].sec+" "+dmsLng[i].cardinal;
+                            tabel.rows[i+1].cells[2].textContent = dmsLat[i].deg+"° "+ dmsLat[i].min+"\' "+dmsLat[i].sec+"\" "+dmsLat[i].cardinal;
+                            tabel.rows[i+1].cells[3].textContent = dmsLng[i].deg+"° "+ dmsLng[i].min+"\' "+dmsLng[i].sec+"\" "+dmsLng[i].cardinal;
                         }
                         console.log(dmsLat, dmsLng);
 

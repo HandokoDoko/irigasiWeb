@@ -6,7 +6,6 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Irigasi;
 use App\Koordinat;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use File;
 
@@ -110,32 +109,6 @@ class HomeController extends Controller
       $irigasi->saluranSkunder=$request->saluranSkunder;
       $irigasi->jnsSaluranSkunder=$request->jnsSaluranSkunder;
       $irigasi->debitAir=$request->debitAir;
-
-      
-      //$irigasi=Irigasi::find($id);
-      $id = 109;
-
-      $irigasi->save();
-      if($irigasi->kewenangan=="1")
-      {
-        //$index = $irigasi->id;
-        //dd($index);
-        //dd($koor);
-        //return view('detail/view/109');
-        //return Redirect::route('detail/view/109');
-        return redirect('data/1');
-        //return redirect('detail', ['irigasi' => $irigasi]);
-        
-      }
-      else if($irigasi->kewenangan=="2")
-      { 
-        return redirect('data/2');
-        //return redirect('detail/view', compact($idn));
-      }
-      else if($irigasi->kewenangan=='3')
-      {
-        return redirect('data/3');
-        //return redirect('detail/view', compact($idn));
 
       if (Input::file('skemaJaringan')->isValid() and Input::file('petaSituasi')->isValid()) {
         $destinationPath = '../public/assets/file'; 
