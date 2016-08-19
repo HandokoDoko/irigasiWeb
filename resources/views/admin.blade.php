@@ -127,7 +127,7 @@
                                         </div>
                                         <div class="padding-20 core-content">
                                             <h3 class="title block no-margin">Total Data Pusat</h3>
-                                            <h1>0</h1>
+                                            <h1>{{ $jlhPusat }}</h1>
                                         </div>
                                     </div>
                                     <div class="panel-footer clearfix no-padding">
@@ -151,7 +151,7 @@
                                         </div>
                                         <div class="padding-20 core-content">
                                             <h3 class="title block no-margin">Total Data Provinsi</h3>
-                                            <h1>0</h1>
+                                            <h1>{{ $jlhProv }}</h1>
                                         </div>
                                     </div>
                                     <div class="panel-footer clearfix no-padding">
@@ -174,7 +174,7 @@
                                         </div>
                                         <div class="padding-20 core-content">
                                             <h3 class="title block no-margin">Total Data Kebupaten</h3>
-                                            <h1>0</h1>
+                                            <h1>{{ $jlhKab }}</h1>
                                         </div>
                                     </div>
                                     <div class="panel-footer clearfix no-padding">
