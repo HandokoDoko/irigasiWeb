@@ -27,7 +27,16 @@
 						<div class="toolbar row">
 							<div class="col-sm-6 hidden-xs">
 								<div class="page-header">
-									<h1>Input Data Pusat<small>Input dan simpan data Irigasi</small></h1>
+								@if($id==1)
+				                <h2>Input Data Pusat<small>Input dan simpan data Irigasi</small></h2>
+				                @endif
+				                @if($id==2)
+				                <h2>Input Data Provinsi<small>Input dan simpan data Irigasi</small></h2>
+				                @endif
+				                @if($id==3)
+				                <h2>Input Data Kabupaten<small>Input dan simpan data Irigasi</small></h2>
+				                @endif
+									
 								</div>
 							</div>
 							<!-- end: TOOLBAR -->
@@ -70,11 +79,6 @@
 														</a>
 													</li>
 													<li>
-														<a class="panel-config" href="#panel-config" data-toggle="modal">
-															<i class="fa fa-wrench"></i> <span>Configurations</span>
-														</a>
-													</li>
-													<li>
 														<a class="panel-expand" href="#">
 															<i class="fa fa-expand"></i> <span>Fullscreen</span>
 														</a>
@@ -94,7 +98,7 @@
 													Nama Pengambilan
 												</label>
 												<div class="col-sm-5">
-													<input placeholder="" class="form-control" required="" id="nama" name="nama" type="text" >
+													<input placeholder="" value="{{ old('nama') }}" class="form-control" required="" id="nama" name="nama" type="text" >
                                                         @if ($errors->has('nama'))
                                                             <span class="help-block">
                                                                 <strong>{{ $errors->first('nama') }}</strong>
@@ -107,7 +111,7 @@
 													Kecamatan
 												</label>
 												<div class="col-sm-5">
-													<input placeholder="" class="form-control" required="" id="nama" name="Kecamatan" type="text" >
+													<input placeholder="" value="{{ old('Kecamatan') }}" class="form-control" required="" id="nama" name="Kecamatan" type="text" >
                                                         @if ($errors->has('Kecamatan'))
                                                             <span class="help-block">
                                                                 <strong>{{ $errors->first('Kecamatan') }}</strong>
@@ -121,7 +125,7 @@
 													Kewenangan
 												</label>
 												<div class="col-sm-5">
-													<select id="form-field-select-1" class="form-control" name="kewenangan" required="">
+													<select id="form-field-select-1" value="{{ old('kewenangan') }}" class="form-control" name="kewenangan" required="">
 														<option value="1" selected="">Pusat</option>
 														<option value="2">Provinsi</option>
 														<option value="3">Kabupaten</option>
@@ -138,7 +142,7 @@
 													Jumlah Bendungan
 												</label>
 												<div class="col-sm-5">
-													<input type="text" placeholder="" id="form-field-2" class="form-control" name="jlhBendung" required="">
+													<input type="text" value="{{ old('jlhBendung') }}" placeholder="" id="form-field-2" class="form-control" name="jlhBendung" required="">
 													@if ($errors->has('jlhBendung'))
                                                             <span class="help-block">
                                                                 <strong>{{ $errors->first('jlhBendung') }}</strong>
@@ -151,10 +155,10 @@
 													Luas Area
 												</label>
 												<div class="col-sm-5">
-													<input type="text" placeholder="" id="form-field-2" class="form-control" required="" name="luasArea">
+													<input type="text" value="{{ old('luasArea') }}" placeholder="" id="form-field-2" class="form-control" required="" name="luasArea">
 													@if ($errors->has('luasArea'))
                                                             <span class="help-block">
-                                                                <strong>{{ $errors->first('LuasArea') }}</strong>
+                                                                <strong>{{ $errors->first('luasArea') }}</strong>
                                                             </span>
                                                     @endif
 												</div>
@@ -164,7 +168,7 @@
 													Panjang Saluran
 												</label>
 												<div class="col-sm-5">
-													<input type="text" placeholder="" id="form-field-2" class="form-control" required="" name="panjangSaluran">
+													<input type="text" value="{{ old('panjangSaluran') }}" placeholder="" id="form-field-2" class="form-control" required="" name="panjangSaluran">
 													@if ($errors->has('panjangSaluran'))
                                                             <span class="help-block">
                                                                 <strong>{{ $errors->first('panjangSaluran') }}</strong>
@@ -177,7 +181,7 @@
 													Saluran Primer
 												</label>
 												<div class="col-sm-5">
-													<input type="text" placeholder="" id="form-field-2" class="form-control" required="" name="saluranPrimer">
+													<input type="text" placeholder="" value="{{ old('saluranPrimer') }}" id="form-field-2" class="form-control" required="" name="saluranPrimer">
 													@if ($errors->has('saluranPrimer'))
                                                             <span class="help-block">
                                                                 <strong>{{ $errors->first('saluranPrimer') }}</strong>
@@ -190,7 +194,7 @@
 													Jenis Saluran Primer
 												</label>
 												<div class="col-sm-5">
-													<input type="text" placeholder="" id="form-field-2" class="form-control" required="" name="jnsSaluranPrimer">
+													<input type="text" placeholder="" value="{{ old('jnsSaluranPrimer') }}" id="form-field-2" class="form-control" required="" name="jnsSaluranPrimer">
 													@if ($errors->has('jnsSaluranPrimer'))
                                                             <span class="help-block">
                                                                 <strong>{{ $errors->first('jnsSaluranPrimer') }}</strong>
@@ -205,7 +209,7 @@
 													Saluran Skunder
 												</label>
 												<div class="col-sm-5">
-													<input type="text" placeholder="" id="form-field-2" class="form-control" required="" name="saluranSkunder">
+													<input type="text" value="{{ old('saluranSkunder') }}" placeholder="" id="form-field-2" class="form-control" required="" name="saluranSkunder">
 													@if ($errors->has('saluranSkunder'))
                                                             <span class="help-block">
                                                                 <strong>{{ $errors->first('saluranSkunder') }}</strong>
@@ -218,7 +222,7 @@
 													Jenis Saluran Skunder
 												</label>
 												<div class="col-sm-5">
-													<input type="text" placeholder="" id="form-field-2" class="form-control" required="" name="jnsSaluranSkunder">
+													<input type="text" value="{{ old('jnsSaluranSkunder') }}" placeholder="" id="form-field-2" class="form-control" required="" name="jnsSaluranSkunder">
 													@if ($errors->has('jnsSaluranSkunder'))
                                                             <span class="help-block">
                                                                 <strong>{{ $errors->first('jnsSaluranSkunder') }}</strong>
@@ -231,7 +235,7 @@
 													Debit Air
 												</label>
 												<div class="col-sm-5">
-													<input type="text" placeholder="" id="form-field-2" class="form-control" required="" name="debitAir">
+													<input type="text" value="{{ old('debitAir') }}" placeholder="" id="form-field-2" class="form-control" required="" name="debitAir">
 													@if ($errors->has('debitAir'))
                                                             <span class="help-block">
                                                                 <strong>{{ $errors->first('debitAir') }}</strong>
@@ -262,7 +266,13 @@
 															</div>
 														</div>
 													</div>
+													@if ($errors->has('skemaJaringan'))
+                                                            <span class="help-block red">
+                                                                <strong>{{ $errors->first('skemaJaringan') }}</strong>
+                                                            </span>
+                                                    @endif
 												</div>
+												
 											</div>
 											<div class="form-group">
 												<label class="col-sm-2 control-label" for="form-field-2">
@@ -287,7 +297,13 @@
 															</div>
 														</div>
 													</div>
+													@if ($errors->has('petaSituasi'))
+                                                            <span class="help-block red">
+                                                                <strong>{{ $errors->first('petaSituasi') }}</strong>
+                                                            </span>
+                                                    @endif
 												</div>
+												
 											</div>
 										<div class="from-group">
 											 <div class="col-sm-7" align="center">

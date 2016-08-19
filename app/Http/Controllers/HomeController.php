@@ -64,14 +64,14 @@ class HomeController extends Controller
          return view('data_prov')->with(['irgs'=> $irgs,'id'=>$id]);
     }
 
-    public function tambah_data()
+    public function tambah_data($id)
     {
         //$irigasi=Irigasi::all($id);
      //   $id = $irigasi->id;
        // dd($id);
 
        // return view('editData')->with('irigasi', $irigasi);
-        return view('input_data');
+        return view('input_data')->with('id',$id);
     }
      public function hapus($id)
     {
@@ -93,6 +93,8 @@ class HomeController extends Controller
         'nama'=>'required',
         'kewenangan'=>'required',
         'Kecamatan'=>'required',
+        'skemaJaringan'=>'mimes:doc,docx,pdf',
+        'petaSituasi'=>'mimes:doc,docx,pdf',
         /*'email'=>'required',
         'password' => 'min:6|confirmed',*/
         //'password' => 'min:6|confirmed',
