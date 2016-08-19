@@ -76,7 +76,7 @@
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-md-12 space20">
-							<a href="/tambah_data" class="btn btn-green">
+							<a href="/tambah_data/{{$id}}" class="btn btn-green">
 								Tambah Data <i class="fa fa-plus"></i>
 							</a>
 						</div>
