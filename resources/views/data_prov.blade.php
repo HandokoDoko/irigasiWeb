@@ -11,7 +11,15 @@
     <div class="toolbar row">
         <div class="col-sm-6 hidden-xs">
             <div class="page-header">
-                <h1>Detail Data daerah Irigasi</h1>
+                @if($id==1)
+                <h2>Daftar D.I. Kewenangan Pusat</h2>
+                @endif
+                @if($id==2)
+                <h2>Daftar D.I. Kewenangan Provinsi</h2>
+                @endif
+                @if($id==3)
+                <h2>Daftar D.I. Kewenangan Kabupaten</h2>
+                @endif
             </div>
         </div>
     </div>
@@ -22,7 +30,7 @@
         <div class="col-md-12">
             <ol class="breadcrumb">
                 <li>
-                    <a href="#">
+                    <a href="/admin">
                         Dashboard
                     </a>
                 </li>

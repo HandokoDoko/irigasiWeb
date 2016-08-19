@@ -45,18 +45,12 @@ class ProfileController extends Controller
   }
  
   public function uploadImg(Request $request) {
-     $this->validate($request,[
-        'file'=>'required',
+    $this->validate($request,[
+        'file' => 'required|mimes:jpeg,jpg,png,gif|required|max:10000',
         ]);
    $user= Profile::find($request->id);
-  $file = array('file' => Input::file('file'));
-  $rules = array('file' => 'required',);
-  $validator = Validator::make($file, $rules);
-  if ($validator->fails()) {
-    return Redirect::to('home')->withInput()->withErrors($validator);
-  }
-  else {
-    if (Input::file('file')->isValid()) {
+  
+    if (Input::hasFile('image')) {
       $destinationPath = '../public/assets/img/profile'; 
       $extension = Input::file('file')->getClientOriginalExtension(); 
       $fileName = rand(11111,99999).'-'.Input::file('file')->getClientOriginalName().'.'.$extension; 
@@ -79,5 +73,4 @@ class ProfileController extends Controller
       return Redirect::to('home');
     }
   }
-}
 }
