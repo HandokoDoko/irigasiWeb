@@ -56,11 +56,6 @@
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a class="panel-config" href="#panel-config" data-toggle="modal">
-                                                            <i class="fa fa-wrench"></i> <span>Configurations</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
                                                         <a class="panel-expand" href="#">
                                                             <i class="fa fa-expand"></i> <span>Fullscreen</span>
                                                         </a>

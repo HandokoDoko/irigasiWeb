@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Irigasi;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -29,7 +30,6 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = '/admin';
-
     /**
      * Create a new authentication controller instance.
      *
@@ -54,6 +54,7 @@ class AuthController extends Controller
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
+        
         
     }
 
