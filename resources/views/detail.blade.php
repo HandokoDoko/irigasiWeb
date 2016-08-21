@@ -4,7 +4,14 @@
    #map {
     width: 100%;
     height: 400px;
+
   }
+    .kanan{
+      text-align: right;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
 </style>
 @section('content')
 <div class="container">
@@ -117,6 +124,25 @@
                   <div class="panel-body">
                     <div class="table-responsive">
                       <table class="table table-bordered table-hover" id="sample-table-1">
+                        
+                        <span class="kanan col-xs-12">
+                          @if($irigasi->petaSituasi!="")
+                          <a href="{{ asset('') }}assets/file/{{$irigasi->petaSituasi }}" target="_blank">
+                            <button class=" btn btn-purple ">
+                                Peta Situasi <i class="fa fa-download"></i>
+                            </button>
+                          </a>
+                          @endif
+                          @if($irigasi->skemaJaringan!="")
+                          <a href="{{ asset('') }}assets/file/{{$irigasi->skemaJaringan }}" target="_blank">
+                              <button class="btn btn-purple">
+                                  Skema Jaringan <i class="fa fa-download"></i>
+                              </button>
+                          </a>
+                          @endif
+                        </span>
+                        <br>
+                        <br>
                         <tr>
                           <td>Kewenangan</td>
                           @if($irigasi->kewenangan==1)

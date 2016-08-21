@@ -95,7 +95,7 @@
 										
 											<div class="form-group">
 												<label class="col-sm-2 control-label" for="form-field-1">
-													Nama Pengambilan
+													Nama D.I.
 												</label>
 												<div class="col-sm-5">
 													<input placeholder="" value="{{ old('nama') }}" class="form-control" required="" id="nama" name="nama" type="text" >
