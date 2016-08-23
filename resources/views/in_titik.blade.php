@@ -91,7 +91,7 @@
 											</label>
 											<div class="col-sm-9">
 												<div class="input-group">
-													<input id="latDrajat" type="number" name="latDrajat" style="width:50px;"> <b>°</b>  <input id="latMenit" type="number" name="latMenit" style="width:50px;"> <b>'</b>  <input id="latDetik" type="number" name="latDetik" style="width:100px;"> <b>"</b> 
+													<input id="latDrajat" type="number" min="0" step="0.5" name="latDrajat" style="width:50px;"> <b>°</b>  <input id="latMenit" type="number" min="0" step="0.5" name="latMenit" style="width:50px;"> <b>'</b>  <input id="latDetik" type="number" min="0" step="0.5" name="latDetik" style="width:100px;"> <b>"</b> 
 													<select name="latDms" id="latDms">
 														<option value="S">S</option><option value="N">N</option>
 													</select>
@@ -104,7 +104,7 @@
 											</label>
 											<div class="col-sm-9">
 												<div class="input-group">
-													<input id="lngDrajat" type="number" name="lngDrajat" style="width:50px;"> <b>°</b>  <input id="lngMenit" type="number" name="lngMenit" style="width:50px;"> <b>'</b>  <input id="lngDetik" type="number" name="lngDetik" style="width:100px;"> <b>"</b> 
+													<input id="lngDrajat" type="number" min="0" step="0.5" name="lngDrajat" style="width:50px;"> <b>°</b>  <input id="lngMenit" type="number" min="0" step="0.5" name="lngMenit" style="width:50px;"> <b>'</b>  <input id="lngDetik" type="number" min="0" step="0.5" name="lngDetik" style="width:100px;"> <b>"</b> 
 													<select name="lngDms" id="lngDms">
 														<option value="E">E</option><option value="W">W</option>
 													</select>
