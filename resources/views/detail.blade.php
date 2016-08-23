@@ -303,6 +303,6 @@
             Index.init();
             TableData.init();
             UIButtons.init();
-        });
+       });
     </script>
 @endsection
