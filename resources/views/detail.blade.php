@@ -15,6 +15,33 @@
 </style>
 @section('content')
 <div class="container">
+
+  <!-- start: PAGE HEADER -->
+  <!-- start: TOOLBAR -->
+  <div class="toolbar row">
+    <div class="col-sm-6 hidden-xs">
+      <div class="page-header">
+        <h1>Data Irigasi (<font color="red">{{ $irigasi->nama }}</font>)<small>Kecamatan: <font color="red"><b>{{ $irigasi->Kecamatan }}</b></font></small></h1>
+      </div>
+    </div>
+    <!-- end: TOOLBAR -->
+  <!-- end: PAGE HEADER -->
+  <!-- start: BREADCRUMB -->
+  <div class="row">
+    <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li>
+          <a href="#">
+            Dashboard
+          </a>
+        </li>
+        <li class="active">
+          Data Irigasi
+        </li>
+      </ol>
+    </div>
+  </div>
+  <!-- end: BREADCRUMB -->
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">

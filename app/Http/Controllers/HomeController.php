@@ -212,7 +212,7 @@ class HomeController extends Controller
     
     $koor->save();
 
-    return redirect('data/1');
+    return redirect('detail/view/'.$request->id);
   
   }
 

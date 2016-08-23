@@ -159,9 +159,9 @@
 									<div class="panel-body">
 
 										<form role="form" class="form-horizontal"  action="/simpanKoordinat" method="POST" accept-charset="UTF-8">{!! Form::open(['method' => 'post']) !!}
-											<input type="hidden" name="id" id="id" value="{{ $irigasi->id }}">
-											<input type="hidden" name="lat" id="lat" value="">
-											<input type="hidden" name="lng" id="lng" value="">
+											<input type="text" name="id" id="id" value="{{ $irigasi->id }}">
+											<input type="text" name="lat" id="lat" value="">
+											<input type="text" name="lng" id="lng" value="">
 
 											<div class="form-group">
 												<table class="table table-hover" id="sample-table-1">
@@ -200,7 +200,7 @@
 
 											<div class="from-group">
 												<div class="col-sm-12" align="center">
-													<button data-style="expand-right" class="ladda-button" data-color="green"> Simpan <i class="fa fa-arrow-circle-right"></i>
+													<button data-style="contract-overlay" class="ladda-button" data-color="green" disabled=""> Simpan
 													</button>
 												</div>
 											</div>
