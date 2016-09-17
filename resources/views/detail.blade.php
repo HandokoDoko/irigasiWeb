@@ -105,7 +105,7 @@
                               <td>{{ $dts->lat }}</td>
                               <td>{{ $dts->lng }}</td>
                               <td><a href="">Edit</a></td>
-                              <td><a href="">Hapus</a></td>
+                              <td><a href="hapus_titik/{{$dts->id}}">Hapus</a></td>
                             </tr>
                           @endforeach
                         @elseif($koor != NULL)
@@ -307,7 +307,7 @@
                               map: map,
                             });
 
-                            marker.setIcon("http://googlemaps.googlermania.com/img/marker_flag.png");
+                            marker.setIcon("https://photos-5.dropbox.com/t/2/AACaD7KyrHratKKdcWxzDMSy4nNIkdU1lrs-6zxWse7MjA/12/556790497/png/32x32/1/_/1/2/irigasi.png/END3g7sEGAQgAigC/5DcKxDfiZWupLY8UMpBV31FRrB9Z6yXOX6GyjafhNHc?size=1280x960&size_mode=3");
 
                             google.maps.event.addListener(marker, 'click', (function(marker, i) {
                               return function() {

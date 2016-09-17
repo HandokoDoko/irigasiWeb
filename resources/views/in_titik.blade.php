@@ -159,9 +159,9 @@
 									<div class="panel-body">
 
 										<form role="form" class="form-horizontal"  action="/simpanKoordinat" method="POST" accept-charset="UTF-8">{!! Form::open(['method' => 'post']) !!}
-											<input type="text" name="id" id="id" value="{{ $irigasi->id }}">
-											<input type="text" name="lat" id="lat" value="">
-											<input type="text" name="lng" id="lng" value="">
+											<input type="hidden" name="id" id="id" value="{{ $irigasi->id }}">
+											<input type="hidden" name="lat" id="lat" value="">
+											<input type="hidden" name="lng" id="lng" value="">
 
 											<div class="form-group">
 												<table class="table table-hover" id="sample-table-1">
@@ -200,7 +200,7 @@
 
 											<div class="from-group">
 												<div class="col-sm-12" align="center">
-													<button data-style="contract-overlay" class="ladda-button" data-color="green" disabled=""> Simpan
+													<button id="btnSave" data-style="contract-overlay" class="ladda-button" data-color="green" disabled=""> Simpan
 													</button>
 												</div>
 											</div>
@@ -240,6 +240,7 @@
     var latDetik = document.getElementById('latDetik');
     var latDirek = document.getElementById('latDms');
     var btnTambah = document.getElementById('tambah');
+    var btnSave = document.getElementById('btnSave');
 
 //Variabel Longitude
     var lngDrajat = document.getElementById('lngDrajat');
@@ -287,6 +288,7 @@
 			lts.textContent = "Lat: "+lat_;
 			lns.textContent = "Lng: "+lng_;
     		btnTambah.value = "Cek Ulang";
+    		btnSave.disabled = false;
     });
 </script>
 
