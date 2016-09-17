@@ -10,7 +10,7 @@
 
     <div class="section section-header">
         <div class="parallax pattern-image" style="background: rgb(12, 12, 12) none repeat scroll 0% 0%;">
-         <img src="assets/img/bg.jpg"/>
+         <img src="assets/img/bg.png"/>
             <div class="container">
                 <div class="content">
                     <div class="row">
