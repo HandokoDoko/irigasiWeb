@@ -73,7 +73,7 @@ class HomeController extends Controller
        // return view('editData')->with('irigasi', $irigasi);
         return view('input_data')->with('id',$id);
     }
-     public function hapus($id)
+    public function hapus($id)
     {
          $irigasi=Irigasi::find($id);
          $index=$irigasi->kewenangan;
@@ -193,22 +193,38 @@ class HomeController extends Controller
     return view('in_titik')->with('irigasi', $irigasi);
   }
 
+  public function tambah_gambar($id)
+  {
+
+    $irigasi=Irigasi::find($id);
+    return view('in_gambar')->with('irigasi', $irigasi);
+  }
+
   public function simpanKoordinat(Request $request)
   {
     $this->validate($request,[
-      'nama'=>'required',/*
+      'nama'=>'required',
+      'gbr' => 'required|mimes:jpeg,jpg,png,gif|required|max:10000',/*
       'nip'=>'required',
       'username'=>'required',
       'email'=>'required',
       'password' => 'min:6|confirmed',*/
       //'password' => 'min:6|confirmed',
       ]);
+
+
+      $destinationPath = '../public/assets/img/gambar'; 
+      $extension = Input::file('gbr')->getClientOriginalExtension(); 
+      $fileName = rand(11111,99999).'-'.Input::file('gbr')->getClientOriginalName().'.'.$extension; 
+      Input::file('gbr')->move($destinationPath, $fileName); 
+
     $koor= new Koordinat;
     $koor->idIrigasi=$request->id;
     $koor->nama=$request->nama;
     $koor->lat=$request->lat;
     $koor->lng=$request->lng;
     $koor->desc=$request->des;
+    $koor->gbr=$fileName;
     
     $koor->save();
 

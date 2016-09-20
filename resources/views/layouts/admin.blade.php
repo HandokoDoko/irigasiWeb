@@ -215,7 +215,6 @@
 									<li>
 										<a href="{{ url('/data/3') }}">
 											<span class="title"> Data Kabupaten </span><span class="label label-default pull-right "></span>
-										</a>
 									</li>
 								</ul>
 							</li>
