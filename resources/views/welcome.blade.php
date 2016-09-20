@@ -10,12 +10,12 @@
 
     <div class="section section-header">
         <div class="parallax pattern-image" style="background: rgb(12, 12, 12) none repeat scroll 0% 0%;">
-         <img src="assets/img/bg.jpg"/>
+         <img src="assets/img/bg.png"/>
             <div class="container">
                 <div class="content">
                     <div class="row">
                         <div class="col-xs-12">
-                            <h1>di Serdang Bedagai</h1>
+                            <h1>d.i. Serdang Bedagai</h1>
                             <h5>Sistem Informasi Daerah Irigasi Pemerintah Kabupaten Serdang Bedagai</h5>      
                             <!--<p style="margin-top:100px">
                                 <a href="{{ url('/event/create') }}" class="btn btn-green">
@@ -43,20 +43,20 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="card add-animation animation-1">
-                        <div class="icon">
+                       <!--  <div class="icon">
                             <i class="pe-7s-tools"></i>
-                        </div>
+                        </div> -->
                         <h3>Visi Kementerian Pertanian</h3>
                         <p>Terwujudnya Indonesia yang Berdaulat, Mandiri dan Berkepribadian Berlandaskan Gotong Royong. </p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="card add-animation animation-2">
-                        <div class="icon">
+                       <!--  <div class="icon">
                             <i class="pe-7s-gift"></i>
-                        </div>
+                        </div> -->
                         <h3>Misi Kementerian Pertanian </h3>
                         <p> 1.Mewujudkan ketahanan pangan dan gizi<br>
                             2. Meningkatkan Nilai Tambah dan Daya Saing Komoditas Pertanian<br>
@@ -65,15 +65,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card add-animation animation-3">
-                        <div class="icon">
-                            <i class="pe-7s-rocket"></i>
-                        </div>
-                        <h3>Power Hackatons</h3>
-                        <p>We've sponsored many hackatons around the world with the tools that they need to make awesome web applications. We like to help where we can, and our tools go hand in hand with startups. </p>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
