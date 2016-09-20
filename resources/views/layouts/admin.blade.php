@@ -204,17 +204,17 @@
 								<ul class="sub-menu">
 									<li>
 										<a href="{{ url('/data/1') }}">
-											<span class="title"> Data Pusat </span><span class="label label-default pull-right ">{{ 10 }}</span>
+											<span class="title"> Data Pusat </span>
 										</a>
 									</li>
 									<li>
 										<a href="{{ url('/data/2') }}">
-											<span class="title"> Data Provinsi </span><span class="label label-default pull-right ">{{ 10 }}</span>
+											<span class="title"> Data Provinsi </span>
 										</a>
 									</li>
 									<li>
 										<a href="{{ url('/data/3') }}">
-											<span class="title"> Data Kabupaten </span><span class="label label-default pull-right ">{{ 10 }}</span>
+											<span class="title"> Data Kabupaten </span>
 										</a>
 									</li>
 								</ul>

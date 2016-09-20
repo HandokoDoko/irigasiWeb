@@ -82,7 +82,8 @@
                   </div>
                   <div class="panel-body">
                     <p>
-                      <a class="btn btn-primary" href="/tambah_titik/{{ $irigasi->id}}"><i class="fa fa-plus"></i> Add Coordinates</a>
+                      <a class="btn btn-primary" href="/tambah_titik/{{ $irigasi->id}}"><i class="fa fa-plus"></i> Tambah Titik Irigasi</a>
+                       <a class="btn btn-green" href="/tambah_foto/{{ $irigasi->id}}"><i class="fa fa-plus"></i> Tambah Foto Irigasi</a>
                     </p>
                     <div class="table-responsive">
                       <table class="table table-bordered table-hover" id="tblData">

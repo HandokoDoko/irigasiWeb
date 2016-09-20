@@ -34,7 +34,7 @@ class HomeController extends Controller
     public function detail($id)
     {
         $irigasi=Irigasi::find($id);
-        $koor = Koordinat::where('idIrigasi',"=",$id)->get();
+        $koor = Koordinat::where('idIrigasi',"=",$id)->get(); 
         //dd($koor);
         return view('detail')->with(['irigasi'=>$irigasi, 'koor'=>$koor]);
     }
@@ -73,7 +73,7 @@ class HomeController extends Controller
        // return view('editData')->with('irigasi', $irigasi);
         return view('input_data')->with('id',$id);
     }
-     public function hapus($id)
+    public function hapus($id)
     {
          $irigasi=Irigasi::find($id);
          $index=$irigasi->kewenangan;
