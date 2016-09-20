@@ -158,7 +158,7 @@
 									</div>
 									<div class="panel-body">
 
-										<form role="form" class="form-horizontal"  action="/simpanKoordinat" method="POST" accept-charset="UTF-8">{!! Form::open(['method' => 'post']) !!}
+										{!!Form::open(array('url'=>'/simpanKoordinat','method'=>'POST', 'class'=>'form-horizontal','files'=>true))!!}
 											<input type="hidden" name="id" id="id" value="{{ $irigasi->id }}">
 											<input type="hidden" name="lat" id="lat" value="">
 											<input type="hidden" name="lng" id="lng" value="">
@@ -182,26 +182,17 @@
 														<td><input type="text" name="nama" id="nama" class="form-input"></td>
 													</tr>
 													<tr>
-														<td>Foto </td>
+														<td>Gambar </td>
 														<td>:</td>
 														<td>
 															<div class="fileupload fileupload-new" data-provides="fileupload">
                                                                 <div class="fileupload-new thumbnail">
-                                                                @if(Auth::user()->pic==null)
-                                                                    <img src="{{ asset('') }}assets/img/profile/anonymous.jpg" alt="">
-                                                                @endif
-                                                                @if(Auth::user()->pic!=null)
-                                                                    <img src="{{ asset('') }}assets/img/profile/{{ Auth::user()->pic }}" alt="">
-                                                                @endif
                                                                 </div>
                                                                 <div class="fileupload-preview fileupload-exists thumbnail"></div>
                                                                 <div class="user-edit-image-buttons">
-                                                                    <span class="btn btn-azure btn-file"><span class="fileupload-new"><i class="fa fa-picture"></i> Select image</span><span class="fileupload-exists"><i class="fa fa-picture"></i> Change</span>
-                                                                        <input type="file" name="file" id="file" value="{{Auth::user()->pic}}" accept="image/*">
+                                                                    <span class="btn btn-azure btn-file"><span class="fileupload-new"><i class="fa fa-picture"></i> Select image</span><span class="fileupload-exists"><i class="fa fa-picture"></i> Ubah</span>
+                                                                        <input type="file" name="gbr" id="gbr" accept="image/*">
                                                                     </span>
-                                                                    <a href="javascript:{}" onclick="document.getElementById('frmPic').submit();" class="btn fileupload-exists btn btn-purple">
-                                                                        <i class="fa fa-times fa-arrow-circle-right"></i> Upload
-                                                                    </a>
                                                                     
                                                                 </div>
                                                             </div>
@@ -231,8 +222,7 @@
 													</button>
 												</div>
 											</div>
-											{{ Form::close() }}
-										</form>
+										{{ Form::close() }}
 									</div>
 								</div>
 								<!-- end: STREET VIEW PANEL -->

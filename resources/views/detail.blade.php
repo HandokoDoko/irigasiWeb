@@ -21,7 +21,7 @@
   <div class="toolbar row">
     <div class="col-sm-6 hidden-xs">
       <div class="page-header">
-        <h1>Data Irigasi (<font color="red">{{ $irigasi->nama }}</font>)<small>Kecamatan: <font color="red"><b>{{ $irigasi->Kecamatan }}</b></font></small></h1>
+        <h1>Data Irigasi ({{ $irigasi->nama }})<small>Kecamatan: <b>{{ $irigasi->Kecamatan }}</b></small></h1>
       </div>
     </div>
     <!-- end: TOOLBAR -->
@@ -83,10 +83,8 @@
                   <div class="panel-body">
                     <p>
                       <a class="btn btn-primary" href="/tambah_titik/{{ $irigasi->id}}"><i class="fa fa-plus"></i> Tambah Titik Irigasi</a>
-                       <a class="btn btn-green" href="/tambah_gambar/{{ $irigasi->id}}"><i class="fa fa-plus"></i> Tambah Gambar Irigasi</a>
                     </p>
                     <div class="table-responsive">
-                      <h2>Data Titik Irigasi</h2>
                       <table class="table table-bordered table-hover" id="tblData">
 
                         <thead>
@@ -95,6 +93,7 @@
                             <th>Deskripsi</th>
                             <th>Latitude</th>
                             <th>Longitude</th>
+                            <th>Gbr</th>
                             <th colspan="2">Aksi</th>
                           </tr>
                         </thead>
@@ -106,38 +105,15 @@
                               <td>{{ $dts->desc }}</td>
                               <td>{{ $dts->lat }}</td>
                               <td>{{ $dts->lng }}</td>
-                              <td><a href="">Edit</a></td>
-                              <td><a href="hapus_titik/{{$dts->id}}">Hapus</a></td>
-                            </tr>
-                          @endforeach
-                        @elseif($koor != NULL)
-                          <tr>
-                            <td>Data Koordinat Belum Di Input</td>
-                          </tr>
-                        @endif
-                        </tbody>
-                      </table>
-
-                      <h2>Data Titik Gambar</h2>
-                      <table class="table table-bordered table-hover" id="tblGambar">
-
-                        <thead>
-                          <tr>
-                            <th>Nama</th>
-                            <th>Deskripsi</th>
-                            <th>Latitude</th>
-                            <th>Longitude</th>
-                            <th colspan="2">Aksi</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                        @if($gbr != NULL)
-                          @foreach($gbr as $dtg)
-                            <tr>   
-                              <td>{{ $dtg->nama }}</td>
-                              <td>{{ $dtg->gambar }}</td>
-                              <td>{{ $dtg->lat }}</td>
-                              <td>{{ $dtg->lng }}</td>
+                              <td style="display: none">@if($dts->gbr != ""){{ asset('') }}assets/img/gambar/{{ $dts->gbr }}@else @endif
+                              </td>
+                              <td>
+                              @if($dts->gbr != "")
+                              <a href="{{ asset('') }}assets/img/gambar/{{ $dts->gbr }}">Lihat</a>
+                              @else
+                                Tidak ada
+                              @endif
+                              </td>
                               <td><a href="">Edit</a></td>
                               <td><a href="hapus_titik/{{$dts->id}}">Hapus</a></td>
                             </tr>
@@ -283,7 +259,8 @@
                             nama:tabel.rows[i].cells[i-1].textContent,
                             deskripsi:tabel.rows[i].cells[1].textContent,
                             lat:tabel.rows[i].cells[2].textContent,
-                            lng:tabel.rows[i].cells[3].textContent
+                            lng:tabel.rows[i].cells[3].textContent,
+                            gbr:tabel.rows[i].cells[4].textContent
                           });
                         }
 
@@ -345,7 +322,21 @@
 
                             google.maps.event.addListener(marker, 'click', (function(marker, i) {
                               return function() {
-                                infowindow.setContent("<b>"+data[i].nama+"</b><p>"+data[i].deskripsi+"</p>");
+                                if(data[i].gbr != '                               ')
+                                {
+                                  infowindow.setContent(
+                                    "<p><b>"+data[i].nama+"</b><br></p><p><img src="+data[i].gbr+" width='300' height='300'></p>"
+                                    +"<p><h5>Deskripsi:<br></h5>"
+                                    +data[i].deskripsi+"</p>"
+                                    );
+                                }
+                                else
+                                {
+                                  infowindow.setContent(
+                                    "<p><b>"+data[i].nama+"</b></p><hr><p><h5>Deskripsi:<br></h5>"
+                                    +data[i].deskripsi+"</p>"
+                                    );
+                                }
                                 infowindow.open(map, marker);
                               }
                             })(marker, i));
