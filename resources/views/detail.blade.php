@@ -256,7 +256,7 @@
                         var mapDiv = document.getElementById('map');
                         for (var i = 1; i < tabel.rows.length; i++) {
                           data.push({
-                            nama:tabel.rows[i].cells[i-1].textContent,
+                            nama:tabel.rows[i].cells[0].textContent,
                             deskripsi:tabel.rows[i].cells[1].textContent,
                             lat:tabel.rows[i].cells[2].textContent,
                             lng:tabel.rows[i].cells[3].textContent,
