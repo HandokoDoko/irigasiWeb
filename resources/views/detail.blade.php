@@ -83,9 +83,10 @@
                   <div class="panel-body">
                     <p>
                       <a class="btn btn-primary" href="/tambah_titik/{{ $irigasi->id}}"><i class="fa fa-plus"></i> Tambah Titik Irigasi</a>
-                       <a class="btn btn-green" href="/tambah_foto/{{ $irigasi->id}}"><i class="fa fa-plus"></i> Tambah Foto Irigasi</a>
+                       <a class="btn btn-green" href="/tambah_gambar/{{ $irigasi->id}}"><i class="fa fa-plus"></i> Tambah Gambar Irigasi</a>
                     </p>
                     <div class="table-responsive">
+                      <h2>Data Titik Irigasi</h2>
                       <table class="table table-bordered table-hover" id="tblData">
 
                         <thead>
@@ -105,6 +106,38 @@
                               <td>{{ $dts->desc }}</td>
                               <td>{{ $dts->lat }}</td>
                               <td>{{ $dts->lng }}</td>
+                              <td><a href="">Edit</a></td>
+                              <td><a href="hapus_titik/{{$dts->id}}">Hapus</a></td>
+                            </tr>
+                          @endforeach
+                        @elseif($koor != NULL)
+                          <tr>
+                            <td>Data Koordinat Belum Di Input</td>
+                          </tr>
+                        @endif
+                        </tbody>
+                      </table>
+
+                      <h2>Data Titik Gambar</h2>
+                      <table class="table table-bordered table-hover" id="tblGambar">
+
+                        <thead>
+                          <tr>
+                            <th>Nama</th>
+                            <th>Deskripsi</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                            <th colspan="2">Aksi</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        @if($gbr != NULL)
+                          @foreach($gbr as $dtg)
+                            <tr>   
+                              <td>{{ $dtg->nama }}</td>
+                              <td>{{ $dtg->gambar }}</td>
+                              <td>{{ $dtg->lat }}</td>
+                              <td>{{ $dtg->lng }}</td>
                               <td><a href="">Edit</a></td>
                               <td><a href="hapus_titik/{{$dts->id}}">Hapus</a></td>
                             </tr>

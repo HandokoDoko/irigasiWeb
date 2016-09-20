@@ -6,6 +6,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Irigasi;
 use App\Koordinat;
+use App\Gambar;
 use Illuminate\Support\Facades\Input;
 use File;
 
@@ -34,9 +35,10 @@ class HomeController extends Controller
     public function detail($id)
     {
         $irigasi=Irigasi::find($id);
-        $koor = Koordinat::where('idIrigasi',"=",$id)->get(); 
+        $koor = Koordinat::where('idIrigasi',"=",$id)->get();
+        $gbr = Gambar::where('idTitikIrigasi',"=",$id)->get();
         //dd($koor);
-        return view('detail')->with(['irigasi'=>$irigasi, 'koor'=>$koor]);
+        return view('detail')->with(['irigasi'=>$irigasi, 'koor'=>$koor, 'gbr'=>$gbr]);
     }
 
     public function admin()
@@ -193,6 +195,13 @@ class HomeController extends Controller
     return view('in_titik')->with('irigasi', $irigasi);
   }
 
+  public function tambah_gambar($id)
+  {
+
+    $irigasi=Irigasi::find($id);
+    return view('in_gambar')->with('irigasi', $irigasi);
+  }
+
   public function simpanKoordinat(Request $request)
   {
     $this->validate($request,[
@@ -211,6 +220,30 @@ class HomeController extends Controller
     $koor->desc=$request->des;
     
     $koor->save();
+
+    return redirect('detail/view/'.$request->id);
+  
+  }
+
+    public function simpanGambar(Request $request)
+  {
+    $this->validate($request,[
+      'nama'=>'required',/*
+      'nip'=>'required',
+      'username'=>'required',
+      'email'=>'required',
+      'password' => 'min:6|confirmed',*/
+      //'password' => 'min:6|confirmed',
+      ]);
+    $gbr= new Gambar;
+    $gbr->idTitikIrigasi=$request->id;
+    $gbr->nama=$request->nama;
+    $gbr->lat=$request->lat;
+    $gbr->lng=$request->lng;
+    $gbr->desc=$request->des;
+    $gbr->gambar=$request->img;
+    
+    $gbr->save();
 
     return redirect('detail/view/'.$request->id);
   

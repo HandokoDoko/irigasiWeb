@@ -30,7 +30,7 @@
 	<div class="toolbar row">
 		<div class="col-sm-6 hidden-xs">
 			<div class="page-header">
-				<h1>Input Tempat Irigasi (<font color="red">{{ $irigasi->nama }}</font>)<small>Kecamatan: <font color="red"><b>{{ $irigasi->Kecamatan }}</b></font></small></h1>
+				<h1>Input Gambar Irigasi (<font color="red">{{ $irigasi->nama }}</font>)<small>Kecamatan: <font color="red"><b>{{ $irigasi->Kecamatan }}</b></font></small></h1>
 			</div>
 		</div>
 		<!-- end: TOOLBAR -->
@@ -48,7 +48,7 @@
 					<a href="#">Form Input</a>
 				</li>
 				<li class="active">
-					Input Koordinat
+					Input Gambar Irigasi
 				</li>
 			</ol>
 		</div>
@@ -158,7 +158,7 @@
 									</div>
 									<div class="panel-body">
 
-										<form role="form" class="form-horizontal"  action="/simpanKoordinat" method="POST" accept-charset="UTF-8">{!! Form::open(['method' => 'post']) !!}
+										<form role="form" class="form-horizontal"  action="/simpanGambar" method="POST" accept-charset="UTF-8">{!! Form::open(['method' => 'post']) !!}
 											<input type="hidden" name="id" id="id" value="{{ $irigasi->id }}">
 											<input type="hidden" name="lat" id="lat" value="">
 											<input type="hidden" name="lng" id="lng" value="">
@@ -182,22 +182,14 @@
 														<td><input type="text" name="nama" id="nama" class="form-input"></td>
 													</tr>
 													<tr>
-														<td>Foto </td>
+														<td>Gambar Irigasi </td>
 														<td>:</td>
 														<td>
 															<div class="fileupload fileupload-new" data-provides="fileupload">
-                                                                <div class="fileupload-new thumbnail">
-                                                                @if(Auth::user()->pic==null)
-                                                                    <img src="{{ asset('') }}assets/img/profile/anonymous.jpg" alt="">
-                                                                @endif
-                                                                @if(Auth::user()->pic!=null)
-                                                                    <img src="{{ asset('') }}assets/img/profile/{{ Auth::user()->pic }}" alt="">
-                                                                @endif
-                                                                </div>
                                                                 <div class="fileupload-preview fileupload-exists thumbnail"></div>
                                                                 <div class="user-edit-image-buttons">
                                                                     <span class="btn btn-azure btn-file"><span class="fileupload-new"><i class="fa fa-picture"></i> Select image</span><span class="fileupload-exists"><i class="fa fa-picture"></i> Change</span>
-                                                                        <input type="file" name="file" id="file" value="{{Auth::user()->pic}}" accept="image/*">
+                                                                        <input type="file" name="img" id="img" accept="image/*">
                                                                     </span>
                                                                     <a href="javascript:{}" onclick="document.getElementById('frmPic').submit();" class="btn fileupload-exists btn btn-purple">
                                                                         <i class="fa fa-times fa-arrow-circle-right"></i> Upload
