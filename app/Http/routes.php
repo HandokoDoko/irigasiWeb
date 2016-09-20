@@ -27,7 +27,7 @@ Route::get('/admin', 'HomeController@admin');
 Route::get('/data/{id}', 'HomeController@data_provinsi')->where('id', '[1-3]+');
 Route::get('/tambah_data/{id}', 'HomeController@tambah_data')->where('id', '[1-3]+');
 Route::get('/tambah_titik/{id}', 'HomeController@tambah_titik');
-
+Route::get('/detail/view/hapus_titik/{id}', 'HomeController@hapus_titik');
 Route::delete('/data/remove/{id}', 'HomeController@hapus');
 Route::get('/data/{id}/edit', 'HomeController@edit');
 Route::put('/editDi/{id}', 'HomeController@editDi');

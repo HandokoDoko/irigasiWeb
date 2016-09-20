@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Irigasi;
+use App\titikIrigasi;
 use App\Koordinat;
 use Illuminate\Support\Facades\Input;
 use File;
@@ -191,6 +192,15 @@ class HomeController extends Controller
 
     $irigasi=Irigasi::find($id);
     return view('in_titik')->with('irigasi', $irigasi);
+  }
+
+  public function hapus_titik($id)
+  {
+
+    $irigasi=titikIrigasi::find($id);
+    $id=$irigasi->idIrigasi;
+    $irigasi->delete();
+    return redirect('detail/view/'.$id);
   }
 
   public function tambah_gambar($id)
