@@ -182,10 +182,37 @@
 														<td><input type="text" name="nama" id="nama" class="form-input"></td>
 													</tr>
 													<tr>
+														<td>Foto </td>
+														<td>:</td>
+														<td>
+															<div class="fileupload fileupload-new" data-provides="fileupload">
+                                                                <div class="fileupload-new thumbnail">
+                                                                @if(Auth::user()->pic==null)
+                                                                    <img src="{{ asset('') }}assets/img/profile/anonymous.jpg" alt="">
+                                                                @endif
+                                                                @if(Auth::user()->pic!=null)
+                                                                    <img src="{{ asset('') }}assets/img/profile/{{ Auth::user()->pic }}" alt="">
+                                                                @endif
+                                                                </div>
+                                                                <div class="fileupload-preview fileupload-exists thumbnail"></div>
+                                                                <div class="user-edit-image-buttons">
+                                                                    <span class="btn btn-azure btn-file"><span class="fileupload-new"><i class="fa fa-picture"></i> Select image</span><span class="fileupload-exists"><i class="fa fa-picture"></i> Change</span>
+                                                                        <input type="file" name="file" id="file" value="{{Auth::user()->pic}}" accept="image/*">
+                                                                    </span>
+                                                                    <a href="javascript:{}" onclick="document.getElementById('frmPic').submit();" class="btn fileupload-exists btn btn-purple">
+                                                                        <i class="fa fa-times fa-arrow-circle-right"></i> Upload
+                                                                    </a>
+                                                                    
+                                                                </div>
+                                                            </div>
+														</td>
+													</tr>
+													<tr>
 														<td>Deskripsi</td>
 														<td>:</td>
 														<td><textarea name="des" id="des" class="form-input"></textarea></td>
 													</tr>
+
 													<tr>
 														<td>Koordinat</td>
 														<td>:</td>
