@@ -42,7 +42,7 @@
                                     <td>{{ $data->nama }}</td>
                                     <td>{{$data->Kecamatan}}</td>
                                     <td>
-                                        <a href="lihat/{{ $data->id}}"></a>
+                                        <a href="lihat/{{ $data->id}}" class="btn btn-primary">Lihat</a>
                                     </td>
                                 </tr>
                                 @endforeach
