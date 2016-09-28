@@ -37,4 +37,7 @@ Route::put('/simpanDi', 'HomeController@simpanDi');
 Route::put('apply/upload', 'ProfileController@uploadImg');
 
 Route::resource('irigasi', 'IrigasiController');
+Route::resource('data/irigasi', 'AwalController@data_irigasi');
+Route::resource('data_provinsi', 'AwalController@awal_data_prov');
+Route::resource('data_kabupaten', 'AwalController@awal_data_kab');
 

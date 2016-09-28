@@ -124,18 +124,20 @@
     </div>
 
     <div class="section section-we-made-3" id="projects">
-       <!-- <div class="container">
+        <div class="container">
             <div class="row">
                 <div class="title add-animation">
-                    <h2>Our Famous cer-template</h2>
+                    <h2>Data Irigasi Serdang Bedagai</h2>
                     <div class="separator-container">
                         <div class="separator line-separator">∎</div>
                     </div>
-                    <p>Check out the most popular cer-template from our platform. We would love to hear your feedback.<br><br></p>
+                    <p>
+                    <a href="data/irigasi" class="btn btn-default">Lihat Data Irigasi</a>
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="container">
+        <!--<div class="container">
              <div class="row">
 
                 <div class="col-lg-4 col-md-4 col-sm-6">
